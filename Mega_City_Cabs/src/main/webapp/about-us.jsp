@@ -121,8 +121,8 @@
                 <p>&copy; 2025 Mega City Cabs. All rights reserved.</p>
             </div>
             <div class="footer-right">
-                <a href="about-us.jsp" class="footer-link">
-                    <i class="fas fa-info-circle"></i> About Us
+                <a href="home.jsp" class="footer-link">
+                    <i class="fas fa-home"></i> Home
                 </a>
                 <a href="reviews.jsp" class="footer-link">
                     <i class="fas fa-comments"></i> Reviews
