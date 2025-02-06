@@ -1,12 +1,131 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Home Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Mega City Cabs</title>
+    <link rel="stylesheet" href="CSS/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-hi
+    <!-- Menu Bar -->
+    <header class="menu-bar">
+        <div class="logo">
+            <img src="images/Logo.png" alt="Mega City Cabs Logo">
+        </div>
+        <nav class="nav-links">
+            <a href="home.jsp">Home</a>
+            <a href="about.jsp">About Us</a>
+            <a href="help.jsp">Help</a>
+            <a href="services.jsp">Services</a>
+            <a href="reviews.jsp">Reviews</a>
+            <a href="contact.jsp">Contact Us</a>
+        </nav>
+        <div class="buttons">
+            <button onclick="location.href='login.jsp';" class="login-btn">Login</button>
+            <button onclick="location.href='signup.jsp';" class="signup-btn">Sign Up</button>
+        </div>
+    </header>
+
+    <!-- Banner Section -->
+    <section class="banner">
+        <div class="overlay"></div>
+        <img src="images/cab.jpeg" alt="City Cab Banner">
+        <div class="banner-text">
+            <h1>Welcome to Mega City Cabs</h1>
+            <button onclick="location.href='booking.jsp';" class="book-now-btn">Book Now</button>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="introduction">
+        <div class="intro-container">
+            <div class="intro-image">
+                <img src="images/why choose us.png" alt="Mega City Cabs Image">
+            </div>
+            <div class="intro-text">
+                <h2>Why Choose Us</h2>
+                <p>
+                    At Mega City Cabs, we prioritize your convenience and safety. 
+                    With a fleet of well-maintained vehicles and professional drivers, 
+                    we ensure a seamless travel experience. Choose us for:
+                </p>
+                <ul>
+                    <li>24/7 customer support</li>
+                    <li>Affordable pricing</li>
+                    <li>Fast and easy booking</li>
+                    <li>Reliable and safe rides</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="best-cars">
+    <h2>Our Best Cars</h2>
+    <div class="car-cards">
+        <div class="car-card">
+            <img src="images/wagonR.png" alt="Car 1">
+            <div class="car-info">
+                <h3><i class="fas fa-car"></i> Suzuki WagonR</h3>
+                <p>A hatchback, air conditioned with capacity of 4 passengers ideal for short distance trips with adequate luggage space.</p>
+                <p><i class="fas fa-users"></i> 4 passengers</p>
+                <p><i class="fas fa-snowflake"></i> Air Conditioned</p>
+                <p><i class="fas fa-briefcase"></i> Limited baggage</p>
+            </div>
+        </div>
+        <div class="car-card">
+            <img src="images/tata nano.png" alt="Car 2">
+            <div class="car-info">
+                <h3><i class="fas fa-car"></i> Tata Nano</h3>
+                <p>A small hatchback, air conditioned with capacity of 3 passengers ideal for short distance trips.</p>
+                <p><i class="fas fa-users"></i> 3 passengers</p>
+                <p><i class="fas fa-snowflake"></i> Air Conditioned</p>
+                <p><i class="fas fa-briefcase"></i> Small Backpacks</p>
+            </div>
+        </div>
+        <div class="car-card">
+            <img src="images/suzuki alto.png" alt="Car 3">
+            <div class="car-info">
+                <h3><i class="fas fa-car"></i> Suzuki Alto</h3>
+                <p>A small hatchback, air conditioned with capacity of 3 passengers ideal for short distance trips.</p>
+                <p><i class="fas fa-users"></i> 3 passengers</p>
+                <p><i class="fas fa-snowflake"></i> Air Conditioned</p>
+                <p><i class="fas fa-briefcase"></i> Limited baggage</p>
+            </div>
+        </div>
+        <!-- Add more cars as needed -->
+    </div>
+    <!-- See More Cars Button -->
+    <div class="see-more-container">
+        <button class="see-more-btn">
+            See More Cars <i class="fas fa-arrow-right"></i>
+        </button>
+    </div>
+</section>
+
+<!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <p>&copy; 2025 Mega City Cabs. All rights reserved.</p>
+            </div>
+            <div class="footer-right">
+                <a href="about.jsp" class="footer-link">
+                    <i class="fas fa-info-circle"></i> About Us
+                </a>
+                <a href="reviews.jsp" class="footer-link">
+                    <i class="fas fa-comments"></i> Reviews
+                </a>
+                <a href="contact.jsp" class="footer-link">
+                    <i class="fas fa-phone-alt"></i> Contact Us
+                </a>
+                <a href="help.jsp" class="footer-link">
+                    <i class="fas fa-question-circle"></i> Help
+                </a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
