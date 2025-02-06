@@ -16,11 +16,11 @@
         </div>
         <nav class="nav-links">
             <a href="home.jsp">Home</a>
-            <a href="about.jsp">About Us</a>
+            <a href="about-us.jsp">About Us</a>
             <a href="help.jsp">Help</a>
             <a href="services.jsp">Services</a>
             <a href="reviews.jsp">Reviews</a>
-            <a href="contact.jsp">Contact Us</a>
+            <a href="contact-us.jsp">Contact Us</a>
         </nav>
         <div class="buttons">
             <button onclick="location.href='login.jsp';" class="login-btn">Login</button>
@@ -111,13 +111,13 @@
                 <p>&copy; 2025 Mega City Cabs. All rights reserved.</p>
             </div>
             <div class="footer-right">
-                <a href="about.jsp" class="footer-link">
+                <a href="about-us.jsp" class="footer-link">
                     <i class="fas fa-info-circle"></i> About Us
                 </a>
                 <a href="reviews.jsp" class="footer-link">
                     <i class="fas fa-comments"></i> Reviews
                 </a>
-                <a href="contact.jsp" class="footer-link">
+                <a href="contact-us.jsp" class="footer-link">
                     <i class="fas fa-phone-alt"></i> Contact Us
                 </a>
                 <a href="help.jsp" class="footer-link">
