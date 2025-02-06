@@ -144,7 +144,7 @@ body {
 }
 
 .card {
-    background: var(--yellow);;
+    background: var(--yellow);
     color: var(--brown);
     width: 45%;
     padding: 20px;
@@ -222,7 +222,7 @@ body {
 
 /* Footer */
 footer {
-    background-color: #2b2b2b;
+    background-color: var(--brown);
     color: white;
     padding: 20px;
 }
@@ -247,4 +247,127 @@ footer {
 
 .footer-right a:hover {
     color: var(--yellow);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+	.menu-bar {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .menu-bar .logo img {
+        height: 50px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        align-items: center;
+    }
+
+    .buttons button {
+        width: auto;
+    }
+
+	.about-us {
+        padding: 30px 15px;
+    }
+
+    .about-container {
+        display: block;
+        text-align: center;
+    }
+
+    .about-left,
+    .about-right {
+        display: inline-block;
+        width: 100%;
+    }
+
+    .cards-container {
+        flex-direction: column;
+        margin-left: 0;
+        margin-right: 0;
+        gap: 30px;
+    }
+
+    .card {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .services-container {
+        margin-left: 30px;
+        margin-right: 30px;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .service-left img {
+        width: 70%;
+        max-width: 300px;
+    }
+
+    .service-right h4 {
+        font-size: 18px;
+    }
+
+    .service-right p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-bar {
+        padding: 0px 10px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .buttons button {
+        font-size: 14px;
+    }
+
+    .about-us h2 {
+        font-size: 24px;
+    }
+
+    .about-us p {
+        font-size: 16px;
+    }
+
+    .cards-container {
+        gap: 20px;
+    }
+
+    .card h3 {
+        font-size: 18px;
+    }
+
+    .service-right h4 {
+        font-size: 16px;
+    }
+
+    .service-right p {
+        font-size: 13px;
+    }
+
+    footer .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-right a {
+        margin-right: 10px;
+        font-size: 14px;
+    }
 }
