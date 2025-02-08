@@ -1,373 +1,420 @@
 /* Color Variables */
 :root {
-    --yellow: #ffd110;
-    --orange: #ff8400;
-    --brown: #4f200d;
-    --black-transparent: rgba(0, 0, 0, 0.5);
+	--yellow: #ffd110;
+	--orange: #ff8400;
+	--brown: #4f200d;
+	--black-transparent: rgba(0, 0, 0, 0.5);
 }
 
 /* General Body */
 body {
-    font-family: 'Roboto', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f6f1e9;
-    font-size: 16px;
+	font-family: 'Roboto', Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f6f1e9;
+	font-size: 16px;
 }
 
 /* Menu Bar */
 .menu-bar {
-    background-color: #f6f1e9;
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 40px;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 10;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    flex-wrap: wrap;
+	background-color: #f6f1e9;
+	display: flex;
+	justify-content: space-between;
+	padding: 0px 40px;
+	align-items: center;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 10;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	flex-wrap: wrap;
 }
 
 .menu-bar .logo {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .menu-bar .logo img {
-    height: 90px;
-    max-height: 100%;
-    padding: 0;
+	height: 90px;
+	max-height: 100%;
+	padding: 0;
 }
 
 .nav-links {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    margin-left: -50px;
+	display: flex;
+	gap: 20px;
+	align-items: center;
+	margin-left: -50px;
 }
 
 .nav-links a {
-    color: var(--brown);
-    text-decoration: none;
-    font-weight: bold;
-    padding: 10px;
-    transition: color 0.3s, background-color 0.3s;
-    font-size: 16px;
-    white-space: nowrap;
+	color: var(--brown);
+	text-decoration: none;
+	font-weight: bold;
+	padding: 10px;
+	transition: color 0.3s, background-color 0.3s;
+	font-size: 16px;
+	white-space: nowrap;
 }
 
 .nav-links a:hover {
-    background-color: var(--orange);
-    color: white;
-    border-radius: 5px;
+	background-color: var(--orange);
+	color: white;
+	border-radius: 5px;
 }
 
 .buttons {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    margin-top: 0;
-    margin-right: 80px;
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	margin-top: 0;
+	margin-right: 80px;
 }
 
 .buttons button {
-    background-color: var(--yellow);
-    color: var(--brown);
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+	background-color: var(--yellow);
+	color: var(--brown);
+	border: none;
+	padding: 10px 20px;
+	font-size: 16px;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: background-color 0.3s;
 }
 
 .buttons button:hover {
-    background-color: var(--brown);
-    color: var(--yellow);
+	background-color: var(--brown);
+	color: var(--yellow);
 }
 
 /* About Us Section */
 .about-us {
-    padding: 50px 20px;
-    text-align: center;
-    margin-top: 40px;
+	padding: 50px 20px;
+	text-align: center;
+	margin-top: 40px;
 }
 
 .cab-image-container {
-    position: relative;
-    text-align: center;
+	position: relative;
+	text-align: center;
 }
 
 .cab-image {
-    width: 60%;
-    height: auto;
-    border-radius: 10px;
-    margin-top: 20px;
+	width: 60%;
+	height: auto;
+	border-radius: 10px;
+	margin-top: 20px;
 }
 
 .description {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
-    font-size: 24px;
-    font-weight: bold;
-    max-width: 800px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+	font-size: 24px;
+	font-weight: bold;
+	max-width: 800px;
 }
 
 .about-us h2 {
-    color: var(--brown);
-    font-size: 28px;
-    margin-bottom: 20px;
+	color: var(--brown);
+	font-size: 28px;
+	margin-bottom: 20px;
 }
 
 .about-us p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: var(--brown);
-    max-width: 800px;
-    margin: 20px auto;
-    text-align: justify;
+	font-size: 18px;
+	line-height: 1.6;
+	color: var(--brown);
+	max-width: 800px;
+	margin: 20px auto;
+	text-align: justify;
 }
 
 .cards-container {
-    display: flex;
-    justify-content: space-around;
-    gap: 100px;
-    margin-top: 30px;
-    margin-left: 100px;
-    margin-right: 100px;
+	display: flex;
+	justify-content: space-around;
+	gap: 100px;
+	margin-top: 30px;
+	margin-left: 100px;
+	margin-right: 100px;
 }
 
 .card {
-    background: var(--yellow);
-    color: var(--brown);
-    width: 45%;
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	background: var(--yellow);
+	color: var(--brown);
+	width: 45%;
+	padding: 20px;
+	text-align: center;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card .card-icon {
-    font-size: 40px;
-    margin-bottom: 10px;
+	font-size: 40px;
+	margin-bottom: 10px;
 }
 
 .card h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
+	font-size: 22px;
+	margin-bottom: 10px;
 }
 
 .card p {
-    font-size: 16px;
-    line-height: 1.5;
+	font-size: 16px;
+	line-height: 1.5;
 }
 
-.services {
-    padding: 40px;
-    text-align: center;
+/* Our Achievements Section */
+.achievements {
+	padding: 40px;
+	text-align: center;
 }
 
-.services-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: var(--yellow);
-    margin-top: 30px;
-    height: 150px;
-    margin-left: 180px;
-    margin-right: 180px;
+.achievements p {
+	text-align: center;
 }
 
-.service-left {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.achievements h3 {
+	font-size: 22px;
+	color:var(--brown);
 }
 
-.service-left img {
-    width: 50%;
-    max-width: 400px;
-    border-radius: 8px;
+.achievements-container {
+	display: flex;
+	justify-content: space-around;
+	gap: 40px;
+	margin-top: 40px;
 }
 
-.service-right {
-    flex: 2;
-    padding: 20px;
-    item-align: center;
+.achievement {
+	background-color: var(--yellow);
+	color: var(--brown);
+	padding: 30px;
+	border-radius: 100px;
+	text-align: center;
+	width: 150px;
+	border: 3px solid var(--brown);
 }
 
-.service-right h4 {
-    font-size: 19px;
-    font-style: italic;
-    color: var(--brown);
-    margin-bottom: 15px;
+.counter {
+	font-size: 40px;
+	font-weight: bold;
 }
 
-.service-right p {
-    font-size: 14px;
-    color: var(--brown);
-    line-height: 1.6;
-    text-align: justify;
-}
-
-/* Footer */
+/* Footer Section */
 footer {
-    background-color: var(--brown);
-    color: white;
-    padding: 20px;
+	background-color: var(--brown);
+	color: white;
+	padding: 20px;
 }
 
 .footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .footer-left {
-    font-size: 16px;
+	font-size: 16px;
 }
 
 .footer-right a {
-    color: white;
-    text-decoration: none;
-    margin-right: 20px;
-    font-size: 16px;
-    transition: color 0.3s;
+	color: white;
+	text-decoration: none;
+	margin-right: 20px;
+	font-size: 16px;
+	transition: color 0.3s;
 }
 
 .footer-right a:hover {
-    color: var(--yellow);
+	color: var(--yellow);
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
+
+/* For Tablets and smaller screens */
+@media ( max-width : 768px) {
 	.menu-bar {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px 20px;
-    }
-
-    .menu-bar .logo img {
-        height: 50px;
-    }
-
-    .nav-links {
-        display: none;
-    }
-
-    .buttons {
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-        align-items: center;
-    }
-
-    .buttons button {
-        width: auto;
-    }
-
-	.about-us {
-        padding: 30px 15px;
-    }
-
-    .about-container {
-        display: block;
-        text-align: center;
-    }
-
-    .about-left,
-    .about-right {
-        display: inline-block;
-        width: 100%;
-    }
-
-    .cards-container {
-        flex-direction: column;
-        margin-left: 0;
-        margin-right: 0;
-        gap: 30px;
-    }
-
-    .card {
-        width: 80%;
-        margin: 0 auto;
-    }
-
-    .services-container {
-        margin-left: 30px;
-        margin-right: 30px;
-        flex-direction: column;
-        height: auto;
-    }
-
-    .service-left img {
-        width: 70%;
-        max-width: 300px;
-    }
-
-    .service-right h4 {
-        font-size: 18px;
-    }
-
-    .service-right p {
-        font-size: 15px;
-    }
+		background-color: var(--off-white);
+		display: flex;
+		justify-content: space-between;
+		padding: 0px 40px;
+		align-items: center;
+		position: fixed;
+		width: 100%;
+		top: 0;
+		z-index: 10;
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+		flex-wrap: wrap;
+	}
+	.menu-bar .logo {
+		display: flex;
+		align-items: center;
+	}
+	.menu-bar .logo img {
+		height: 90px;
+		max-height: 100%;
+		padding: 0;
+	}
+	.nav-links {
+		display: flex;
+		gap: 20px;
+		align-items: center;
+		margin-left: -50px;
+	}
+	.nav-links a {
+		color: var(--brown);
+		text-decoration: none;
+		font-weight: bold;
+		padding: 10px;
+		transition: color 0.3s, background-color 0.3s;
+		font-size: 16px;
+		white-space: nowrap;
+	}
+	.nav-links a:hover {
+		background-color: var(--orange);
+		color: var(--off-white);
+		border-radius: 5px;
+	}
+	.buttons {
+		display: flex;
+		gap: 10px;
+		align-items: center;
+		margin-top: 0;
+		margin-right: 80px;
+	}
+	.buttons button {
+		background-color: var(--yellow);
+		color: var(--brown);
+		border: none;
+		padding: 10px 20px;
+		font-size: 16px;
+		cursor: pointer;
+		border-radius: 5px;
+		transition: background-color 0.3s;
+	}
+	.buttons button:hover {
+		background-color: var(--brown);
+		color: var(--yellow);
+	}
+	.cards-container {
+		flex-direction: column;
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+	.card {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	.cab-image {
+		width: 80%;
+	}
+	.about-us h2 {
+		font-size: 24px;
+	}
+	.about-us p {
+		font-size: 16px;
+	}
+	.achievements-container {
+		flex-direction: column;
+		gap: 30px;
+	}
+	.achievement {
+		width: 120px;
+	}
 }
 
-@media (max-width: 480px) {
-    .menu-bar {
-        padding: 0px 10px;
-    }
-
-    .nav-links a {
-        font-size: 14px;
-    }
-
-    .buttons button {
-        font-size: 14px;
-    }
-
-    .about-us h2 {
-        font-size: 24px;
-    }
-
-    .about-us p {
-        font-size: 16px;
-    }
-
-    .cards-container {
-        gap: 20px;
-    }
-
-    .card h3 {
-        font-size: 18px;
-    }
-
-    .service-right h4 {
-        font-size: 16px;
-    }
-
-    .service-right p {
-        font-size: 13px;
-    }
-
-    footer .footer-container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .footer-right a {
-        margin-right: 10px;
-        font-size: 14px;
-    }
+/* For Mobile Devices */
+@media ( max-width : 480px) {
+	.menu-bar {
+		background-color: var(--off-white);
+		display: flex;
+		justify-content: space-between;
+		padding: 0px 40px;
+		align-items: center;
+		position: fixed;
+		width: 100%;
+		top: 0;
+		z-index: 10;
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+		flex-wrap: wrap;
+	}
+	.menu-bar .logo {
+		display: flex;
+		align-items: center;
+	}
+	.menu-bar .logo img {
+		height: 90px;
+		max-height: 100%;
+		padding: 0;
+	}
+	.nav-links {
+		display: flex;
+		gap: 20px;
+		align-items: center;
+		margin-left: -50px;
+	}
+	.nav-links a {
+		color: var(--brown);
+		text-decoration: none;
+		font-weight: bold;
+		padding: 10px;
+		transition: color 0.3s, background-color 0.3s;
+		font-size: 16px;
+		white-space: nowrap;
+	}
+	.nav-links a:hover {
+		background-color: var(--orange);
+		color: var(--off-white);
+		border-radius: 5px;
+	}
+	.buttons {
+		display: flex;
+		gap: 10px;
+		align-items: center;
+		margin-top: 0;
+		margin-right: 80px;
+	}
+	.buttons button {
+		background-color: var(--yellow);
+		color: var(--brown);
+		border: none;
+		padding: 10px 20px;
+		font-size: 16px;
+		cursor: pointer;
+		border-radius: 5px;
+		transition: background-color 0.3s;
+	}
+	.buttons button:hover {
+		background-color: var(--brown);
+		color: var(--yellow);
+	}
+	.about-us {
+		padding: 30px 10px;
+	}
+	.cab-image {
+		width: 90%;
+	}
+	.about-us h2 {
+		font-size: 22px;
+	}
+	.about-us p {
+		font-size: 14px;
+	}
+	.cards-container {
+		gap: 30px;
+	}
+	.card {
+		width: 100%;
+	}
+	.achievements-container {
+		flex-direction: column;
+		gap: 20px;
+	}
+	.achievement {
+		width: 100px;
+	}
 }
