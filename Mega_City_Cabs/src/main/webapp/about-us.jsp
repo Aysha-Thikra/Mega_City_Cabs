@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Mega City Cabs</title>
-    <link rel="stylesheet" href="CSS/about-us.css">
+    <link rel="stylesheet" href="CSS/about-us.css?v=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -63,52 +63,25 @@
             </div>
         </div>
 
-        <!-- Our Services Section with Yellow Background -->
-        <section class="services">
-            <h3>Our Services</h3>
-            <p style="text-align: center;">We offer a variety of transportation services to meet all your needs. Whether you need a ride to the airport, a quick trip around town, or a special event, we’ve got you covered.</p>
-            <div class="services-container" style="background-color: var(--yellow);">
-                <!-- Left Div with Image -->
-                <div class="service-left">
-                    <img src="images/yellow car.png" alt="Yellow Car" class="service-image">
+        <!-- Our Achievements Section -->
+        <section class="achievements" id="achievements-section">
+            <h3>Our Achievements</h3>
+            <div class="achievements-container">
+                <div class="achievement">
+                    <div class="counter" id="happy-customers">0</div>
+                    <p>Happy Customers</p>
                 </div>
-                <!-- Right Div with Description -->
-                <div class="service-right">
-                    <h4>City Rides</h4>
-                    <p>Experience seamless travel across the city with our City Rides service. Whether you're heading to a business meeting, a family gathering, or just out for a day of exploration, our fleet of comfortable and reliable cars ensures you reach your destination safely and on time. With our professional drivers and punctuality, you can enjoy the ride stress-free.</p>
+                <div class="achievement">
+                    <div class="counter" id="rides-completed">0</div>
+                    <p>Rides Completed</p>
                 </div>
-            </div>
-            <div class="services-container" style="background-color: var(--yellow);">
-                <!-- Left Div with Image -->
-                <div class="service-left">
-                    <img src="images/yellow car.png" alt="Yellow Car" class="service-image">
+                <div class="achievement">
+                    <div class="counter" id="years-experience">0</div>
+                    <p>Years of Experience</p>
                 </div>
-                <!-- Right Div with Description -->
-                <div class="service-right">
-                    <h4>Corporate Services</h4>
-                    <p>Enhance your business's image with our Corporate Services. We cater to businesses of all sizes, offering timely and professional transportation solutions for meetings, conferences, and corporate events. Our clean, modern fleet and experienced drivers guarantee that you and your clients will arrive in comfort and style.</p>
-                </div>
-            </div>
-            <div class="services-container" style="background-color: var(--yellow);">
-                <!-- Left Div with Image -->
-                <div class="service-left">
-                    <img src="images/yellow car.png" alt="Yellow Car" class="service-image">
-                </div>
-                <!-- Right Div with Description -->
-                <div class="service-right">
-                    <h4>Airport Transfers</h4>
-                    <p>Make your airport transfer hassle-free with Mega City Cabs. Whether you're arriving or departing, we provide reliable, punctual, and comfortable transportation to and from the airport. Let our drivers handle the stress of traffic and parking, so you can relax and focus on your journey ahead.</p>
-                </div>
-            </div>
-            <div class="services-container" style="background-color: var(--yellow);">
-                <!-- Left Div with Image -->
-                <div class="service-left">
-                    <img src="images/yellow car.png" alt="Yellow Car" class="service-image">
-                </div>
-                <!-- Right Div with Description -->
-                <div class="service-right">
-                    <h4>Special Events</h4>
-                    <p>Add a touch of luxury and convenience to your special event with our tailored transportation services. Whether it's a wedding, a gala, or a concert, we offer premium rides that match the occasion. Our fleet is equipped to handle the needs of any event, ensuring a smooth and memorable experience for you and your guests.</p>
+                <div class="achievement">
+                    <div class="counter" id="customer-satisfaction">0</div>
+                    <p>Customer Satisfaction</p>
                 </div>
             </div>
         </section>
@@ -136,5 +109,38 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        let happyCustomers = 100;
+        let ridesCompleted = 1000;
+        let yearsExperience = 10;
+        let customerSatisfaction = 100;
+
+        function animateCounter(id, start, end) {
+            let current = start;
+            let interval = setInterval(function () {
+                document.getElementById(id).innerText = current + '+';
+                if (current === end) {
+                    clearInterval(interval);
+                } else {
+                    current++;
+                }
+            }, 10);
+        }
+
+        function handleScroll() {
+            const section = document.getElementById("achievements-section");
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+                animateCounter('happy-customers', 0, happyCustomers);
+                animateCounter('rides-completed', 0, ridesCompleted);
+                animateCounter('years-experience', 0, yearsExperience);
+                animateCounter('customer-satisfaction', 0, customerSatisfaction);
+                window.removeEventListener("scroll", handleScroll);
+            }
+        }
+
+        window.addEventListener("scroll", handleScroll);
+    </script>
 </body>
 </html>
