@@ -123,6 +123,9 @@
                 <a href="help.jsp" class="footer-link">
                     <i class="fas fa-question-circle"></i> Help
                 </a>
+                <a href="services.jsp" class="footer-link">
+                    <i class="fas fa-wrench"></i> Services
+                </a>
             </div>
         </div>
     </footer>
