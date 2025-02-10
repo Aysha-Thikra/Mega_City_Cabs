@@ -177,6 +177,9 @@
                 <a href="about-us.jsp" class="footer-link">
                     <i class="fas fa-info-circle"></i> About Us
                 </a>
+                <a href="services.jsp" class="footer-link">
+                    <i class="fas fa-wrench"></i> Services
+                </a>
             </div>
         </div>
     </footer>
