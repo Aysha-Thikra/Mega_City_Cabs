@@ -14,7 +14,7 @@
 	<!-- Menu Bar -->
 	<header class="menu-bar">
 		<div class="logo">
-			<img src="images/Logo.png" alt="Mega City Cabs Logo">
+			<img src="images/MCC.png" alt="Mega City Cabs Logo">
 		</div>
 		<nav class="nav-links">
 			<a href="home.jsp">Home</a> <a href="about-us.jsp">About Us</a> <a
