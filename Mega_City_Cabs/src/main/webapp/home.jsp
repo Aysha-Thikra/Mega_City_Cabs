@@ -76,7 +76,7 @@
             </div>
         </div>
         <div class="car-card">
-            <img src="images/tata nano.png" alt="Car 2">
+            <img src="images/tata nano 2.png" alt="Car 2">
             <div class="car-info">
                 <h3><i class="fas fa-car"></i> Tata Nano</h3>
                 <p>A small hatchback, air conditioned with capacity of 3 passengers ideal for short distance trips.</p>
