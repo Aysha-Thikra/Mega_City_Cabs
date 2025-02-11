@@ -16,75 +16,75 @@ body {
 
 /* Menu Bar */
 .menu-bar {
-	background-color: #f6f1e9;
-	display: flex;
-	justify-content: space-between;
-	padding: 0px 40px;
-	align-items: center;
-	position: fixed;
-	width: 100%;
-	top: 0;
-	z-index: 10;
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-	flex-wrap: wrap;
+    background-color: #f6f1e9;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 40px;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
 }
 
 .menu-bar .logo {
-	display: flex;
-	align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .menu-bar .logo img {
-	height: 90px;
-	max-height: 100%;
-	padding: 0;
+    height: 90px;
+    max-height: 100%;
+    padding: 0;
 }
 
 .nav-links {
-	display: flex;
-	gap: 20px;
-	align-items: center;
-	margin-left: -50px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-left: -50px;
 }
 
 .nav-links a {
-	color: var(--brown);
-	text-decoration: none;
-	font-weight: bold;
-	padding: 10px;
-	transition: color 0.3s, background-color 0.3s;
-	font-size: 16px;
-	white-space: nowrap;
+    color: var(--brown);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    transition: color 0.3s, background-color 0.3s;
+    font-size: 16px;
+    white-space: nowrap;
 }
 
 .nav-links a:hover {
-	background-color: var(--orange);
-	color: white;
-	border-radius: 5px;
+    background-color: var(--orange);
+    color: white;
+    border-radius: 5px;
 }
 
 .buttons {
-	display: flex;
-	gap: 10px;
-	align-items: center;
-	margin-top: 0;
-	margin-right: 80px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 0;
+    margin-right: 80px;
 }
 
 .buttons button {
-	background-color: var(--yellow);
-	color: var(--brown);
-	border: none;
-	padding: 10px 20px;
-	font-size: 16px;
-	cursor: pointer;
-	border-radius: 5px;
-	transition: background-color 0.3s;
+    background-color: var(--yellow);
+    color: var(--brown);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
 .buttons button:hover {
-	background-color: var(--brown);
-	color: var(--yellow);
+    background-color: var(--brown);
+    color: var(--yellow);
 }
 
 /* Contact Section */
@@ -97,7 +97,7 @@ body {
 .contact-container h2 {
     font-size: 30px;
     color: var(--brown);
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     font-weight: bold;
 }
 
@@ -115,6 +115,7 @@ body {
     padding: 25px;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    margin-top: -80px;
 }
 
 /* Left Side (Image) */
@@ -145,50 +146,68 @@ body {
 /* Floating Input Fields */
 .input-group {
     position: relative;
-    margin-bottom: 20px;
-}
-
-.input-group input, 
-.input-group textarea {
+    margin-bottom: 25px;
     width: 100%;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.2);
-    font-size: 16px;
-    color: var(--brown);
-    transition: 0.3s;
 }
 
+.input-group input,
+.input-group textarea,
+.input-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background: transparent;
+    outline: none;
+    transition: 0.3s;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Floating Label */
 .input-group label {
     position: absolute;
-    top: 15px;
+    top: 50%;
     left: 15px;
-    font-size: 14px;
-    color: rgba(0, 0, 0, 0.6);
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #777;
     transition: 0.3s ease-in-out;
+    pointer-events: none;
+    margin-top: -15px;
 }
 
-.input-group input:focus + label, 
+/* Focus Animation */
+.input-group input:focus + label,
 .input-group textarea:focus + label,
+.input-group select:focus + label,
 .input-group input:not(:placeholder-shown) + label,
-.input-group textarea:not(:placeholder-shown) + label {
-    top: -10px;
-    left: 10px;
-    font-size: 12px;
+.input-group textarea:not(:placeholder-shown) + label,
+.input-group select:not([value=""]) + label {
+    top: 5px;
+    font-size: 14px;
     color: var(--orange);
 }
 
-.input-group input:focus, 
-.input-group textarea:focus {
-    border: 1px solid var(--orange);
-    outline: none;
+.input-group select {
+    appearance: none;
+    background: url('data:image/svg+xml;utf8,<svg fill="%23777" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"></path></svg>') no-repeat right 15px center;
+    background-size: 16px;
+    cursor: pointer;
+}
+
+.input-group select:focus {
+    border-color: var(--orange);
 }
 
 .input-group textarea {
     resize: none;
+    overflow: hidden;
+    min-height: 50px;
 }
 
+/* Submit Button */
 .submit-btn {
     background: linear-gradient(45deg, #ff6b6b, #ffcc00);
     color: white;
@@ -207,55 +226,36 @@ body {
     transform: scale(1.05);
 }
 
-/* Contact Information Section */
-.contact-info {
-    background: linear-gradient(135deg, #ffeb99, #ffad42);
+/* Contact Card Section */
+.contact-card {
+    margin-top: 20px;
+    padding: 40px;
+    background-color: var(--yellow);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contact-card h2 {
+    font-size: 28px;
     color: var(--brown);
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    text-align: left;
-    max-width: 900px;
-    margin: 30px auto;
+    font-weight: bold;
 }
 
-.contact-info h3 {
-    font-size: 22px;
-    margin-bottom: 15px;
-}
-
-.contact-info p {
-    font-size: 16px;
-    margin: 10px 0;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.contact-info i {
-    color: var(--brown);
+.contact-card p {
     font-size: 18px;
+    color: var(--brown);
+    font-weight: 300;
+    margin-top: 20px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .form-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .form-left,
-    .form-right {
-        max-width: 100%;
-    }
-
-    .form-left img {
-        max-width: 100%;
-    }
-
-    .contact-info {
-        text-align: center;
-    }
+.contact-image {
+    width: 60%;
+    max-width: 500px;
+    margin-top: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Footer Section */
@@ -285,4 +285,21 @@ footer {
 
 .footer-right a:hover {
     color: var(--yellow);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .form-left,
+    .form-right {
+        max-width: 100%;
+    }
+
+    .form-left img {
+        max-width: 100%;
+    }
 }
