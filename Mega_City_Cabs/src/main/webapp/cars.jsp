@@ -135,7 +135,7 @@
                     <h3> Suzuki Alto</h3>
                     <p>The Suzuki Alto is a compact, fuel-efficient car that excels in city driving. Its small size makes it easy to park and maneuver, while its comfortable interior ensures an enjoyable ride for short and long distances.</p>
                     <div class="details">
-                        <p><i class="fas fa-users"></i> 4 Passengers</p>
+                        <p><i class="fas fa-users"></i> 3 Passengers</p>
                         <p><i class="fas fa-snowflake"></i> Air Conditioned</p>
                         <p><i class="fa-solid fa-briefcase"></i> 2 Bags</p>
                     </div>
@@ -150,7 +150,7 @@
                     <h3>Tata Nano</h3>
                     <p>The Tata Nano is an innovative, budget-friendly car that offers surprising space and comfort. Its compact size makes it an ideal choice for navigating crowded streets, while the surprisingly spacious cabin provides comfort for all passengers.</p>
                     <div class="details">
-                        <p><i class="fas fa-users"></i> 5 Passengers</p>
+                        <p><i class="fas fa-users"></i> 3 Passengers</p>
                         <p><i class="fas fa-snowflake"></i> Air Conditioned</p>
                         <p><i class="fa-solid fa-briefcase"></i> 4 Bags</p>
                     </div>
@@ -165,7 +165,7 @@
                     <h3>Suzuki WagonR</h3>
                     <p>The Suzuki WagonR is a reliable and spacious hatchback, offering comfort and practicality for family trips. Its high roof and wide interior make it perfect for longer journeys, while its fuel efficiency ensures you get the best value for your money.</p>
                     <div class="details">
-                        <p><i class="fas fa-users"></i> 7 Passengers</p>
+                        <p><i class="fas fa-users"></i> 4 Passengers</p>
                         <p><i class="fas fa-snowflake"></i> Air Conditioned</p>
                         <p><i class="fa-solid fa-briefcase"></i> 2 Bags</p>
                     </div>
