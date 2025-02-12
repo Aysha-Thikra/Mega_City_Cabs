@@ -66,7 +66,7 @@
 		<h2>Our Best Cars</h2>
 		<div class="car-cards">
 			<div class="car-card">
-				<img src="images/wagonR.png" alt="Car 1">
+				<img src="images/wagon.png" alt="Car 1">
 				<div class="car-info">
 					<h3>
 						<i class="fas fa-car"></i> Suzuki WagonR

@@ -30,7 +30,7 @@
     </header>
     
     <!-- Login Section -->
-    <div class="signup-container">
+    <div class="signup-container" style="margin-bottom: 104px;">
         <h2>Choose Your Login Type</h2>
         <p>Select the type of account you want to log in.</p>
         <div class="signup-options">
