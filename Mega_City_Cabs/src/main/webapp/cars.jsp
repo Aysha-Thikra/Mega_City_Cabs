@@ -23,16 +23,15 @@
 
         .car-cards {
             display: flex;
-            justify-content: center;
-            gap: 30px;
             flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
             margin-top: 30px;
             max-width: 100%;
         }
 
         .car-card {
-            width: 100%;
-            max-width: 100%;
+            width: calc(50% - 10px);
             background-color: #007BFF;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -41,8 +40,6 @@
             cursor: pointer;
             display: flex;
             flex-direction: row;
-            margin-left: 200px;
-            margin-right: 200px;
         }
 
         .car-card:hover {
@@ -72,13 +69,14 @@
 
         .car-info h3 {
             font-size: 27px;
-            color: #333;
+            color: #4F200D;
             margin-bottom: 10px;
         }
 
         .car-info p {
-            color: #4f200d;
-            font-size: 20px;
+            color: #4F200D;
+            font-size: 18px;
+            text-align: justify;
         }
 
         .car-info .details {
@@ -86,24 +84,24 @@
             margin-top: 15px;
             line-height: 1.5;
             font-weight: 500;
-            color: #444;
+            color: #4F200D;
         }
 
         .details p {
             margin: 5px 0;
-            color: #4f200d;
+            color: #4F200D;
         }
 
         .details i {
-            margin-right: 8px; 
-            color: #4f200d; 
+            margin-right: 8px;
+            color: #4F200D;
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Menu Bar -->
+<!-- Menu Bar -->
     <header class="menu-bar">
         <div class="logo">
             <img src="images/MCC.png" alt="Mega City Cabs Logo">
@@ -126,7 +124,8 @@
     <div class="best-cars">
         <h2>Our Best Cars</h2>
         <div class="car-cards">
-        
+
+            <!-- Car Cards -->
             <div class="car-card">
                 <div class="car-image">
                     <img src="images/suzuki alto.png" alt="Suzuki Alto">
@@ -171,7 +170,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="car-card">
                 <div class="car-image">
                     <img src="images/aqua.png" alt="Toyota Aqua">
@@ -204,6 +203,21 @@
 
             <div class="car-card">
                 <div class="car-image">
+                    <img src="images/kia.png" alt="KIA Sportage">
+                </div>
+                <div class="car-info">
+                    <h3>KIA Sportage</h3>
+                    <p>A stylish and versatile compact SUV, offering a comfortable ride, modern technology, and excellent fuel efficiency. With its spacious interior and advanced safety features, it's perfect for both city driving and adventurous road trips.</p>
+                    <div class="details">
+                        <p><i class="fas fa-users"></i> 5 Passengers</p>
+                        <p><i class="fas fa-snowflake"></i> Air Conditioned</p>
+                        <p><i class="fa-solid fa-briefcase"></i> 4 Bags</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="car-card">
+                <div class="car-image" style="">
                     <img src="images/kdh.png" alt="Toyota KDH Van">
                 </div>
                 <div class="car-info">
@@ -231,9 +245,10 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
-
+    
     <!-- Footer Section -->
     <footer>
         <div class="footer-container">
@@ -241,15 +256,14 @@
                 <p>&copy; 2025 Mega City Cabs. All rights reserved.</p>
             </div>
             <div class="footer-right">
-                <a href="about-us.jsp" class="footer-link"> <i class="fas fa-info-circle"></i> About Us </a>
-                <a href="reviews.jsp" class="footer-link"> <i class="fas fa-comments"></i> Reviews </a>
-                <a href="contact-us.jsp" class="footer-link"> <i class="fas fa-phone-alt"></i> Contact Us </a>
-                <a href="help.jsp" class="footer-link"> <i class="fas fa-question-circle"></i> Help </a>
-                <a href="services.jsp" class="footer-link"> <i class="fas fa-wrench"></i> Services </a>
+                <a href="home.jsp" class="footer-link"><i class="fas fa-home"></i> Home</a>
+                <a href="about-us.jsp" class="footer-link"><i class="fas fa-info-circle"></i> About Us</a> 
+                <a href="reviews.jsp" class="footer-link"><i class="fas fa-comments"></i> Reviews</a>
+                <a href="help.jsp" class="footer-link"><i class="fas fa-question-circle"></i> Help</a>
+                <a href="services.jsp" class="footer-link"><i class="fas fa-wrench"></i> Services</a>
             </div>
         </div>
     </footer>
 
 </body>
-
 </html>
