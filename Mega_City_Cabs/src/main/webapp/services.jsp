@@ -151,7 +151,7 @@
         <div class="book-now-text">
             <h2>Ready to Ride?</h2>
             <p>Book your cab easily through our website. Just fill in the details, and your ride will be on its way!</p>
-            <button onclick="location.href='book-now.jsp';" class="book-now-btn">Book A Ride &nbsp;<i class="fa-solid fa-car-side" style="color: #ffffff;"></i></i></button>
+            <button onclick="location.href='booking.jsp';" class="book-now-btn">Book A Ride &nbsp;<i class="fa-solid fa-car-side" style="color: #ffffff;"></i></i></button>
         </div>
         <div class="book-now-image">
             <img src="images/book now.jpg" alt="Book Now" class="book-now-img">
