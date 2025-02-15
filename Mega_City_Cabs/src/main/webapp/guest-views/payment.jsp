@@ -227,7 +227,7 @@
             
             <button class="confirm-btn" type="submit">Confirm Payment</button>
             <button class="back-btn" onclick="window.history.back()">Go Back</button>
-            <button class="cancel-btn" onclick="location.href='home.jsp';">Cancel Ride</button>
+            <button class="cancel-btn" onclick="location.href='../home.jsp';">Cancel Ride</button>
         </form>
     </div>
 
