@@ -131,8 +131,8 @@
             <a href="contact-us.jsp">Contact Us</a>
         </nav>
         <div class="buttons">
-            <button onclick="location.href='login.jsp';" class="login-btn">Login</button>
-            <button onclick="location.href='signup.jsp';" class="signup-btn-2">Sign Up</button>
+            <button onclick="location.href='../guest-views/login.jsp';" class="login-btn">Login</button>
+            <button onclick="location.href='../guest-views/signup.jsp';" class="signup-btn-2">Sign Up</button>
         </div>
     </header>
     
