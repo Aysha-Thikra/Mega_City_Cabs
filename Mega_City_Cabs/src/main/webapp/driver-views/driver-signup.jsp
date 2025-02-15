@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Driver Signup - Mega City Cabs</title>
-    <link rel="stylesheet" href="CSS/signup.css?v=1.0">
+    <link rel="stylesheet" href="../CSS/signup.css?v=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
     <style>
         body {
             font-family: 'Roboto', Arial, sans-serif;
@@ -126,10 +126,10 @@
     <!-- Menu Bar -->
     <header class="menu-bar">
         <div class="logo">
-            <img src="images/MCC.png" alt="Mega City Cabs Logo">
+            <img src="../images/MCC.png" alt="Mega City Cabs Logo">
         </div>
         <nav class="nav-links">
-            <a href="home.jsp">Home</a>
+            <a href="../home.jsp">Home</a>
             <a href="about-us.jsp">About Us</a>
             <a href="help.jsp">Help</a>
             <a href="services.jsp">Services</a>
@@ -138,7 +138,7 @@
         </nav>
         <div class="buttons">
             <button onclick="location.href='login.jsp';" class="login-btn">Login</button>
-            <button onclick="location.href='signup.jsp';" class="signup-btn">Sign Up</button>
+            <button onclick="location.href='signup.jsp';" class="signup-btn-2">Sign Up</button>
         </div>
     </header>
     
