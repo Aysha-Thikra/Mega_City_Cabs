@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment - Mega City Cabs</title>
-    <link rel="stylesheet" href="CSS/home.css">
+    <link rel="stylesheet" href="../CSS/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
     <style>
         /* Root Color Variables */
         :root {
@@ -196,7 +196,7 @@
             <img src="images/MCC.png" alt="Mega City Cabs Logo">
         </div>
         <nav class="nav-links">
-            <a href="home.jsp">Home</a>
+            <a href="../home.jsp">Home</a>
             <a href="about-us.jsp">About Us</a>
             <a href="help.jsp">Help</a>
             <a href="services.jsp">Services</a>
