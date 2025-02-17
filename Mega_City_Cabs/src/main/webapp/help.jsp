@@ -5,18 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Help - Mega City Cabs</title>
-    <link rel="stylesheet" href="../CSS/help.css?v=1.0">
+    <link rel="stylesheet" href="CSS/help.css?v=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-	<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <!-- Menu Bar -->
     <header class="menu-bar">
         <div class="logo">
-            <img src="../images/MCC.png" alt="Mega City Cabs Logo">
+            <img src="images/MCC.png" alt="Mega City Cabs Logo">
         </div>
         <nav class="nav-links">
-            <a href="../home.jsp">Home</a>
+            <a href="home.jsp">Home</a>
             <a href="about-us.jsp">About Us</a>
             <a href="help.jsp">Help</a>
             <a href="services.jsp">Services</a>
@@ -32,7 +32,7 @@
     <!-- Heading Section -->
     <div class="assist-heading">
         <div class="assist-image-container">
-            <img src="../images/car + hoodi guy.png" alt="Car and Hoodie Guy" class="assist-image">
+            <img src="images/car + hoodi guy.png" alt="Car and Hoodie Guy" class="assist-image">
         </div>
         <div class="assist-text">
             <h2>How Can We Assist You?</h2>
@@ -97,7 +97,7 @@
             <button onclick="location.href='booking.jsp';" class="book-now-btn">Book A Ride &nbsp;<i class="fa-solid fa-car-side"></i></i></button>
         </div>
         <div class="book-now-image">
-            <img src="../images/car + hoodi guy 2.png" alt="Book Now" class="book-now-img">
+            <img src="images/car + hoodi guy 2.png" alt="Book Now" class="book-now-img">
         </div>
     </div>
 
@@ -105,7 +105,7 @@
     <div class="contact-card">
         <h2>Need Further Assistance?</h2>
         <p>If you have more questions or need help, reach out to our customer support team!</p>
-        <img src="../images/contact card.png" alt="Contact Image" class="contact-image">
+        <img src="images/contact card.png" alt="Contact Image" class="contact-image">
     </div>
 
     <!-- Footer Section -->
@@ -115,7 +115,7 @@
                 <p>&copy; 2025 Mega City Cabs. All rights reserved.</p>
             </div>
             <div class="footer-right">
-                <a href="../home.jsp" class="footer-link">
+                <a href="home.jsp" class="footer-link">
                     <i class="fas fa-info-circle"></i> Home
                 </a>
                 <a href="reviews.jsp" class="footer-link">

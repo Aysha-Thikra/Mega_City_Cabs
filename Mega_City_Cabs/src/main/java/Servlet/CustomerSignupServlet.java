@@ -12,7 +12,7 @@ import org.mindrot.jbcrypt.BCrypt;
 import Bean.Customer;
 import Dao.CustomerDAO;
 
-@WebServlet("/customer-signup-servlet")
+@WebServlet("/customersignupservlet")
 public class CustomerSignupServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 

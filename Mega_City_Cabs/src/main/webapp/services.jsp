@@ -6,18 +6,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Services - Mega City Cabs</title>
-<link rel="stylesheet" href="../CSS/services.css?v=1.1">
+<link rel="stylesheet" href="CSS/services.css?v=1.1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
 	<!-- Menu Bar -->
 	<header class="menu-bar">
 		<div class="logo">
-			<img src="../images/MCC.png" alt="Mega City Cabs Logo">
+			<img src="images/MCC.png" alt="Mega City Cabs Logo">
 		</div>
 		<nav class="nav-links">
-			<a href="../home.jsp">Home</a> <a href="about-us.jsp">About Us</a> <a
+			<a href="home.jsp">Home</a> <a href="about-us.jsp">About Us</a> <a
 				href="help.jsp">Help</a> <a href="services.jsp">Services</a> <a
 				href="reviews.jsp">Reviews</a> <a href="contact-us.jsp">Contact
 				Us</a>
@@ -34,7 +34,7 @@
 		<div class="services">
 			<div class="services-content">
 				<div class="services-left">
-					<img src="../images/yellow car.png" alt="Yellow Car">
+					<img src="images/yellow car.png" alt="Yellow Car">
 				</div>
 				<div class="services-right">
 					<h2>Our Premium Services</h2>
@@ -101,20 +101,20 @@
 		<h2>Why Choose Our Services?</h2>
 		<div class="details-container">
 			<div class="detail">
-				<img src="../images/Safety First.jpg" alt="Safe Rides">
+				<img src="images/Safety First.jpg" alt="Safe Rides">
 				<h3>Safety First</h3>
 				<p>All our drivers undergo extensive background checks, ensuring
 					a safe journey for you.</p>
 			</div>
 
 			<div class="detail">
-				<img src="../images/Affordable Pricing.jpg" alt="Affordable Pricing">
+				<img src="images/Affordable Pricing.jpg" alt="Affordable Pricing">
 				<h3>Affordable Pricing</h3>
 				<p>Enjoy the most competitive fares without any hidden costs.</p>
 			</div>
 
 			<div class="detail">
-				<img src="../images/Comfort.png" alt="Comfort">
+				<img src="images/Comfort.png" alt="Comfort">
 				<h3>Luxury & Comfort</h3>
 				<p>Well-maintained vehicles that provide a smooth and
 					comfortable ride.</p>
@@ -154,7 +154,7 @@
             <button onclick="location.href='booking.jsp';" class="book-now-btn">Book A Ride &nbsp;<i class="fa-solid fa-car-side" style="color: #ffffff;"></i></i></button>
         </div>
         <div class="book-now-image">
-            <img src="../images/book now.jpg" alt="Book Now" class="book-now-img">
+            <img src="images/book now.jpg" alt="Book Now" class="book-now-img">
         </div>
     </div>
 
@@ -165,7 +165,7 @@
                 <p>&copy; 2025 Mega City Cabs. All rights reserved.</p>
             </div>
             <div class="footer-right">
-                <a href="../home.jsp" class="footer-link">
+                <a href="home.jsp" class="footer-link">
                     <i class="fas fa-info-circle"></i> Home
                 </a>
                 <a href="reviews.jsp" class="footer-link">

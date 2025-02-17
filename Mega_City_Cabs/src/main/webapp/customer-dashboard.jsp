@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Driver Dashboard - Mega City Cabs</title>
-    <link rel="stylesheet" href="../CSS/home.css">
+    <title>Customer Dashboard - Mega City Cabs</title>
+    <link rel="stylesheet" href="CSS/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <style>
         :root {
             --yellow: #ffd110;
@@ -43,12 +43,12 @@
 <body style="background-color: #ff8400;">
     <header class="menu-bar">
         <div class="logo">
-            <img src="../images/MCC.png" alt="Mega City Cabs Logo">
+            <img src="images/MCC.png" alt="Mega City Cabs Logo">
         </div>
         <nav class="nav-links">
-            <a href="driver-dashboard.jsp">Dashboard</a>
-            <a href="ride-requests.jsp">Ride Requests</a>
-            <a href="my-rides.jsp">My Rides</a>
+            <a href="customer-dashboard.jsp">Dashboard</a>
+            <a href="book-ride.jsp">Book a Ride</a>
+            <a href="my-bookings.jsp">My Bookings</a>
             <a href="profile.jsp">Profile</a>
             <a href="settings.jsp">Settings</a>
         </nav>
@@ -60,7 +60,7 @@
     <div class="dashboard-container">
         <div class="dashboard-header">Welcome, <%= session.getAttribute("username") %>!</div>
         <div class="dashboard-content">
-            <p>Thank you for being a part of Mega City Cabs! You can manage ride requests, track your rides, update your profile, and adjust settings using the menu above.</p>
+            <p>Thank you for choosing Mega City Cabs! You can book rides, manage your bookings, update your profile, and adjust settings using the menu above.</p>
         </div>
     </div>
 </body>

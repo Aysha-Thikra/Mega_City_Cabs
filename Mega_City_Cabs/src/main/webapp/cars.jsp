@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cars - Mega City Cabs</title>
-    <link rel="stylesheet" href="../CSS/home.css">
+    <link rel="stylesheet" href="CSS/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <style>
         .best-cars {
             padding: 100px 20px 40px 20px;
@@ -104,10 +104,10 @@
 <!-- Menu Bar -->
     <header class="menu-bar">
         <div class="logo">
-            <img src="../images/MCC.png" alt="Mega City Cabs Logo">
+            <img src="images/MCC.png" alt="Mega City Cabs Logo">
         </div>
         <nav class="nav-links">
-            <a href="../home.jsp">Home</a>
+            <a href="home.jsp">Home</a>
             <a href="about-us.jsp">About Us</a>
             <a href="help.jsp">Help</a>
             <a href="services.jsp">Services</a>
@@ -128,7 +128,7 @@
             <!-- Car Cards -->
             <div class="car-card">
                 <div class="car-image">
-                    <img src="../images/suzuki alto.png" alt="Suzuki Alto">
+                    <img src="images/suzuki alto.png" alt="Suzuki Alto">
                 </div>
                 <div class="car-info">
                     <h3> Suzuki Alto</h3>
@@ -143,7 +143,7 @@
 
             <div class="car-card">
                 <div class="car-image">
-                    <img src="../images/tata nano 2.png" alt="Tata Nano">
+                    <img src="images/tata nano 2.png" alt="Tata Nano">
                 </div>
                 <div class="car-info">
                     <h3>Tata Nano</h3>
@@ -158,7 +158,7 @@
 
             <div class="car-card">
                 <div class="car-image">
-                    <img src="../images/wagon.png" alt="Suzuki WagonR">
+                    <img src="images/wagon.png" alt="Suzuki WagonR">
                 </div>
                 <div class="car-info">
                     <h3>Suzuki WagonR</h3>
@@ -173,7 +173,7 @@
 
             <div class="car-card">
                 <div class="car-image">
-                    <img src="../images/aqua.png" alt="Toyota Aqua">
+                    <img src="images/aqua.png" alt="Toyota Aqua">
                 </div>
                 <div class="car-info">
                     <h3>Toyota Aqua</h3>
@@ -188,7 +188,7 @@
 
             <div class="car-card">
                 <div class="car-image">
-                    <img src="../images/prius.png" alt="Toyota Prius">
+                    <img src="images/prius.png" alt="Toyota Prius">
                 </div>
                 <div class="car-info">
                     <h3>Toyota Prius</h3>
@@ -203,7 +203,7 @@
 
             <div class="car-card">
                 <div class="car-image">
-                    <img src="../images/kia.png" alt="KIA Sportage">
+                    <img src="images/kia.png" alt="KIA Sportage">
                 </div>
                 <div class="car-info">
                     <h3>KIA Sportage</h3>
@@ -218,7 +218,7 @@
 
             <div class="car-card">
                 <div class="car-image" style="">
-                    <img src="../images/kdh.png" alt="Toyota KDH Van">
+                    <img src="images/kdh.png" alt="Toyota KDH Van">
                 </div>
                 <div class="car-info">
                     <h3>Toyota KDH Van</h3>
@@ -233,7 +233,7 @@
 
             <div class="car-card">
                 <div class="car-image">
-                    <img src="../images/highroof.png" alt="Toyota Highroof KDH">
+                    <img src="images/highroof.png" alt="Toyota Highroof KDH">
                 </div>
                 <div class="car-info">
                     <h3>Toyota High Roof KDH Van</h3>
@@ -256,7 +256,7 @@
                 <p>&copy; 2025 Mega City Cabs. All rights reserved.</p>
             </div>
             <div class="footer-right">
-                <a href="../home.jsp" class="footer-link"><i class="fas fa-home"></i> Home</a>
+                <a href="home.jsp" class="footer-link"><i class="fas fa-home"></i> Home</a>
                 <a href="about-us.jsp" class="footer-link"><i class="fas fa-info-circle"></i> About Us</a> 
                 <a href="reviews.jsp" class="footer-link"><i class="fas fa-comments"></i> Reviews</a>
                 <a href="help.jsp" class="footer-link"><i class="fas fa-question-circle"></i> Help</a>

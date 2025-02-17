@@ -6,20 +6,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reviews - Mega City Cabs</title>
-<link rel="stylesheet" href="../CSS/reviews.css?v=1.0">
+<link rel="stylesheet" href="CSS/reviews.css?v=1.0">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
 
 	<!-- Menu Bar -->
 	<header class="menu-bar">
 		<div class="logo">
-			<img src="../images/MCC.png" alt="Mega City Cabs Logo">
+			<img src="images/MCC.png" alt="Mega City Cabs Logo">
 		</div>
 		<nav class="nav-links">
-			<a href="../home.jsp">Home</a> <a href="about-us.jsp">About Us</a> <a
+			<a href="home.jsp">Home</a> <a href="about-us.jsp">About Us</a> <a
 				href="help.jsp">Help</a> <a href="services.jsp">Services</a> <a
 				href="reviews.jsp">Reviews</a> <a href="contact-us.jsp">Contact
 				Us</a>
@@ -44,7 +44,7 @@
 					Feedback</button>
 			</div>
 			<div class="review-right">
-				<img src="../images/feedback.png" alt="Customer Feedback"
+				<img src="images/feedback.png" alt="Customer Feedback"
 					class="review-image">
 			</div>
 		</div>
@@ -55,7 +55,7 @@
 			<div class="review-grid">
 				<div class="review-card">
 					<div class="reviewer-info">
-						<img src="../images/reviewer.png" alt="John Doe">
+						<img src="images/reviewer.png" alt="John Doe">
 						<h4>John Doe</h4>
 					</div>
 					<p>"Excellent service! The drivers are professional and
@@ -63,7 +63,7 @@
 				</div>
 				<div class="review-card">
 					<div class="reviewer-info">
-						<img src="../images/reviewer.png" alt="Jane Smith">
+						<img src="images/reviewer.png" alt="Jane Smith">
 						<h4>Jane Smith</h4>
 					</div>
 					<p>"The cabs are always clean, and the rides are smooth. Highly
@@ -71,7 +71,7 @@
 				</div>
 				<div class="review-card">
 					<div class="reviewer-info">
-						<img src="../images/reviewer.png" alt="Michael Brown">
+						<img src="images/reviewer.png" alt="Michael Brown">
 						<h4>Michael Brown</h4>
 					</div>
 					<p>"Affordable rates and prompt service. Definitely my go-to
@@ -79,7 +79,7 @@
 				</div>
 				<div class="review-card">
 					<div class="reviewer-info">
-						<img src="../images/reviewer.png" alt="Sarah Wilson">
+						<img src="images/reviewer.png" alt="Sarah Wilson">
 						<h4>Sarah Wilson</h4>
 					</div>
 					<p>"The booking process was seamless, and the driver was very
@@ -96,7 +96,7 @@
 				<p>&copy; 2025 Mega City Cabs. All rights reserved.</p>
 			</div>
 			<div class="footer-right">
-				<a href="../home.jsp" class="footer-link"> <i class="fas fa-home"></i>
+				<a href="home.jsp" class="footer-link"> <i class="fas fa-home"></i>
 					Home
 				</a> <a href="about-us.jsp" class="footer-link">
                     <i class="fas fa-info-circle"></i> About Us

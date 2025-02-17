@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Signup - Mega City Cabs</title>
-    <link rel="stylesheet" href="../CSS/signup.css?v=1.0">
+    <link rel="stylesheet" href="CSS/signup.css?v=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 	<style>
 	
 		body {
@@ -126,10 +126,10 @@
     <!-- Menu Bar -->
     <header class="menu-bar">
         <div class="logo">
-            <img src="../images/MCC.png" alt="Mega City Cabs Logo">
+            <img src="images/MCC.png" alt="Mega City Cabs Logo">
         </div>
         <nav class="nav-links">
-            <a href="../home.jsp">Home</a>
+            <a href="home.jsp">Home</a>
             <a href="about-us.jsp">About Us</a>
             <a href="help.jsp">Help</a>
             <a href="services.jsp">Services</a>
@@ -137,8 +137,8 @@
             <a href="contact-us.jsp">Contact Us</a>
         </nav>
         <div class="buttons">
-            <button onclick="location.href='../guest-views/login.jsp';" class="login-btn">Login</button>
-            <button onclick="location.href='../guest-views/signup.jsp';" class="signup-btn-2">Sign Up</button>
+            <button onclick="location.href='login.jsp';" class="login-btn">Login</button>
+            <button onclick="location.href='signup.jsp';" class="signup-btn-2">Sign Up</button>
         </div>
     </header>
     
@@ -198,7 +198,7 @@
                 <p>&copy; 2025 Mega City Cabs. All rights reserved.</p>
             </div>
             <div class="footer-right">
-                <a href="../home.jsp"><i class="fas fa-home"></i> Home</a>
+                <a href="home.jsp"><i class="fas fa-home"></i> Home</a>
                 <a href="about-us.jsp"><i class="fas fa-info-circle"></i> About Us</a>
                 <a href="reviews.jsp"><i class="fas fa-comments"></i> Reviews</a>
                 <a href="help.jsp"><i class="fas fa-question-circle"></i> Help</a>

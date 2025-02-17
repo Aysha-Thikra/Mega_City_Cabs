@@ -6,20 +6,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact Us - Mega City Cabs</title>
-<link rel="stylesheet" href="../CSS/contact-us.css?v=1.0">
+<link rel="stylesheet" href="CSS/contact-us.css?v=1.0">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
 
 	<!-- Menu Bar -->
 	<header class="menu-bar">
 		<div class="logo">
-			<img src="../images/MCC.png" alt="Mega City Cabs Logo">
+			<img src="images/MCC.png" alt="Mega City Cabs Logo">
 		</div>
 		<nav class="nav-links">
-			<a href="../home.jsp">Home</a> <a href="about-us.jsp">About Us</a> <a
+			<a href="home.jsp">Home</a> <a href="about-us.jsp">About Us</a> <a
 				href="help.jsp">Help</a> <a href="services.jsp">Services</a> <a
 				href="reviews.jsp">Reviews</a> <a href="contact-us.jsp">Contact
 				Us</a>
@@ -42,7 +42,7 @@
 					<h3>We are here to help!</h3>
 					<p>Reach out to us, and we’ll get back to you as soon as
 						possible.</p>
-					<img src="../images/contact.png" alt="Contact Us">
+					<img src="images/contact.png" alt="Contact Us">
 				</div>
 
 				<!-- Right Side: Form -->
@@ -88,7 +88,7 @@
 				<h2>Need Further Assistance?</h2>
 				<p>If you have more questions or need help, reach out to our
 					customer support team!</p>
-				<img src="../images/contact card white.png" alt="Contact Image"
+				<img src="images/contact card white.png" alt="Contact Image"
 					class="contact-image">
 			</div>
 			<div class="map-container">
@@ -107,7 +107,7 @@
 				<p>&copy; 2025 Mega City Cabs. All rights reserved.</p>
 			</div>
 			<div class="footer-right">
-				<a href="../home.jsp" class="footer-link"> <i class="fas fa-home"></i>
+				<a href="home.jsp" class="footer-link"> <i class="fas fa-home"></i>
 					Home
 				</a> <a href="about-us.jsp" class="footer-link">
                     <i class="fas fa-info-circle"></i> About Us

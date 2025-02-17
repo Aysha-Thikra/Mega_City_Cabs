@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Login - Mega City Cabs</title>
-    <link rel="stylesheet" href="../CSS/signup.css?v=1.0">
+    <title>Customer Signup - Mega City Cabs</title>
+    <link rel="stylesheet" href="CSS/signup.css?v=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <style>
         body {
             font-family: 'Roboto', Arial, sans-serif;
@@ -16,18 +16,16 @@
             background-color: #ff8400;
         }
 
-        /* Login Container */
         .signup-container {
             text-align: center;
             padding: 100px 20px;
             margin: auto;
             width: 90%;
-            max-width: 500px;
+            max-width: 900px;
             margin-bottom: -80px;
             margin-top: 20px;
         }
 
-        /* Login Subtext */
         .signup-subtext {
             font-size: 16px;
             color: #666;
@@ -41,10 +39,9 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
-        /* Form Fields */
         .signup-form {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
             margin-bottom: 20px;
         }
@@ -52,7 +49,7 @@
         .signup-form .form-group {
             display: flex;
             align-items: center;
-            background: #a0a0a0; 
+            background: #a0a0a0;
             border-radius: 8px;
             padding: 12px;
         }
@@ -70,10 +67,8 @@
             flex: 1;
             font-size: 16px;
             padding: 5px;
-            max-width: 100%;
         }
 
-        /* Login Button */
         .signup-btn {
             background: linear-gradient(135deg, #ff8400, #ffd110);
             color: white;
@@ -85,6 +80,7 @@
             cursor: pointer;
             width: 100%;
             transition: background 0.3s ease-in-out;
+            grid-column: 1 / 4;
         }
 
         .signup-btn:hover {
@@ -108,8 +104,17 @@
             text-decoration: underline;
         }
 
-        /* Responsive */
         @media (max-width: 800px) {
+            .signup-form {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .signup-container {
+                width: 100%;
+            }
+
             .signup-form {
                 grid-template-columns: 1fr;
             }
@@ -121,10 +126,10 @@
     <!-- Menu Bar -->
     <header class="menu-bar">
         <div class="logo">
-            <img src="../images/MCC.png" alt="Mega City Cabs Logo">
+            <img src="images/MCC.png" alt="Mega City Cabs Logo">
         </div>
         <nav class="nav-links">
-            <a href="../home.jsp">Home</a>
+            <a href="home.jsp">Home</a>
             <a href="about-us.jsp">About Us</a>
             <a href="help.jsp">Help</a>
             <a href="services.jsp">Services</a>
@@ -132,30 +137,73 @@
             <a href="contact-us.jsp">Contact Us</a>
         </nav>
         <div class="buttons">
-            <button onclick="location.href='../guest-views/login.jsp';" class="login-btn">Login</button>
-            <button onclick="location.href='../guest-views/signup.jsp';" class="signup-btn-2">Sign Up</button>
+            <button onclick="location.href='guest-views/login.jsp';" class="login-btn">Login</button>
+            <button onclick="location.href='guest-views/signup.jsp';" class="signup-btn-2">Sign Up</button>
         </div>
     </header>
     
-    <!-- Customer Login Form -->
+    <!-- Customer Signup Form -->
     <div class="signup-container">
         <div class="form-wrapper">
-            <h2>Customer Login</h2>
-            <p class="signup-subtext">Login to book your ride with Mega City Cabs.</p>
+            <h2>Customer Signup</h2>
+            <p class="signup-subtext">Create your account to access Mega City Cabs services.</p>
 
-            <form action="customer-login-servlet" method="post" class="signup-form">
+            <%-- Display messages from servlet --%>
+            <%
+                String error = request.getParameter("error");
+                String success = request.getParameter("success");
+                if (error != null) {
+            %>
+                <p style="color: red; font-weight: bold;"><%= error %></p>
+            <%
+                } else if (success != null) {
+            %>
+                <p style="color: green; font-weight: bold;"><%= success %></p>
+            <%
+                }
+            %>
+
+            <form action="<%=request.getContextPath() %>Mega_City_Cabs\src\main\java\Servlet\CustomerSignupServlet/customersignupservlet" method="post" class="signup-form" onsubmit="return validateForm();">
                 <div class="form-group">
                     <i class="fas fa-user"></i>
+                    <input type="text" name="first_name" placeholder="First Name" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="last_name" placeholder="Last Name" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-phone"></i>
+                    <input type="tel" name="phone" placeholder="Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" name="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <input type="text" name="address" placeholder="Address" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-id-card"></i>
+                    <input type="text" name="nic" placeholder="NIC Number" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-user-circle"></i>
                     <input type="text" name="username" placeholder="Username" required>
                 </div>
                 <div class="form-group">
                     <i class="fas fa-lock"></i>
                     <input type="password" name="password" placeholder="Password" required>
                 </div>
-                <button type="submit" class="signup-btn">Login</button>
+                <div class="form-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+                </div>
+                <button type="submit" class="signup-btn">Sign Up</button>
             </form>
 
-            <p class="login-link">Don't have an account? <a href="signup.jsp">Sign Up</a></p>
+            <p class="login-link">Already have an account? <a href="../customer-login.jsp">Login</a></p>
         </div>
     </div>
     
@@ -166,7 +214,7 @@
                 <p>&copy; 2025 Mega City Cabs. All rights reserved.</p>
             </div>
             <div class="footer-right">
-                <a href="../home.jsp"><i class="fas fa-home"></i> Home</a>
+                <a href="home.jsp"><i class="fas fa-home"></i> Home</a>
                 <a href="about-us.jsp"><i class="fas fa-info-circle"></i> About Us</a>
                 <a href="reviews.jsp"><i class="fas fa-comments"></i> Reviews</a>
                 <a href="help.jsp"><i class="fas fa-question-circle"></i> Help</a>

@@ -5,18 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Mega City Cabs</title>
-    <link rel="stylesheet" href="../CSS/about-us.css?v=1.0">
+    <link rel="stylesheet" href="CSS/about-us.css?v=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-	<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <!-- Menu Bar -->
     <header class="menu-bar">
         <div class="logo">
-            <img src="../images/MCC.png" alt="Mega City Cabs Logo">
+            <img src="images/MCC.png" alt="Mega City Cabs Logo">
         </div>
         <nav class="nav-links">
-            <a href="../home.jsp">Home</a>
+            <a href="home.jsp">Home</a>
             <a href="about-us.jsp">About Us</a>
             <a href="help.jsp">Help</a>
             <a href="services.jsp">Services</a>
@@ -34,7 +34,7 @@
         <!-- New Div with Left Cab Image and Right Description -->
         <div class="about-container">
             <div class="about-left">
-                <img src="../images/cab card.png" alt="Mega City Cabs Fleet" class="cab-image">
+                <img src="images/cab card.png" alt="Mega City Cabs Fleet" class="cab-image">
             </div>
             <div class="about-right">
                 <h2>About Mega City Cabs</h2>
@@ -95,7 +95,7 @@
                 <p>&copy; 2025 Mega City Cabs. All rights reserved.</p>
             </div>
             <div class="footer-right">
-                <a href="../home.jsp" class="footer-link">
+                <a href="home.jsp" class="footer-link">
                     <i class="fas fa-home"></i> Home
                 </a>
                 <a href="reviews.jsp" class="footer-link">

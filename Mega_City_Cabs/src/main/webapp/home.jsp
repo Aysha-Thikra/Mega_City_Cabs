@@ -18,14 +18,14 @@
 			<img src="images/MCC.png" alt="Mega City Cabs Logo">
 		</div>
 		<nav class="nav-links">
-			<a href="home.jsp">Home</a> <a href="guest-views/about-us.jsp">About Us</a> <a
-				href="guest-views/help.jsp">Help</a> <a href="guest-views/services.jsp">Services</a> <a
-				href="guest-views/reviews.jsp">Reviews</a> <a href="guest-views/contact-us.jsp">Contact
+			<a href="home.jsp">Home</a> <a href="about-us.jsp">About Us</a> <a
+				href="help.jsp">Help</a> <a href="services.jsp">Services</a> <a
+				href="reviews.jsp">Reviews</a> <a href="contact-us.jsp">Contact
 				Us</a>
 		</nav>
 		<div class="buttons">
-			<button onclick="location.href='guest-views/login.jsp';" class="login-btn">Login</button>
-			<button onclick="location.href='guest-views/signup.jsp';" class="signup-btn">Sign
+			<button onclick="location.href='login.jsp';" class="login-btn">Login</button>
+			<button onclick="location.href='signup.jsp';" class="signup-btn">Sign
 				Up</button>
 		</div>
 	</header>
@@ -36,7 +36,7 @@
 		<img src="images/cab.jpeg" alt="City Cab Banner">
 		<div class="banner-text">
 			<h1>Welcome to Mega City Cabs</h1>
-			<button onclick="location.href='guest-views/booking.jsp';" class="book-now-btn">Book
+			<button onclick="location.href='booking.jsp';" class="book-now-btn">Book
 				Now</button>
 		</div>
 	</section>
@@ -126,7 +126,7 @@
 		<!-- See More Cars Button -->
 		<div class="see-more-container">
 			<button class="see-more-btn"
-				onclick="window.location.href='guest-views/cars.jsp'">
+				onclick="window.location.href='cars.jsp'">
 				See More Cars <i class="fas fa-arrow-right"></i>
 			</button>
 		</div>
@@ -139,15 +139,15 @@
 				<p>&copy; 2025 Mega City Cabs. All rights reserved.</p>
 			</div>
 			<div class="footer-right">
-				<a href="guest-views/about-us.jsp" class="footer-link"> <i
+				<a href="about-us.jsp" class="footer-link"> <i
 					class="fas fa-info-circle"></i> About Us
-				</a> <a href="guest-views/reviews.jsp" class="footer-link"> <i
+				</a> <a href="reviews.jsp" class="footer-link"> <i
 					class="fas fa-comments"></i> Reviews
-				</a> <a href="guest-views/contact-us.jsp" class="footer-link"> <i
+				</a> <a href="contact-us.jsp" class="footer-link"> <i
 					class="fas fa-phone-alt"></i> Contact Us
-				</a> <a href="guest-views/help.jsp" class="footer-link"> <i
+				</a> <a href="help.jsp" class="footer-link"> <i
 					class="fas fa-question-circle"></i> Help
-				</a> <a href="guest-views/services.jsp" class="footer-link"> <i
+				</a> <a href="services.jsp" class="footer-link"> <i
 					class="fas fa-wrench"></i> Services
 				</a>
 			</div>
