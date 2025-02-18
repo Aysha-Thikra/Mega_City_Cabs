@@ -1,52 +1,61 @@
 package Dao;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import Bean.Customer;
 
 public class CustomerDAO {
+    private String jdbcUrl = "jdbc:mysql://127.0.0.1:3306/MegaCityCabs_db";
+    private String jdbcUsername = "root";
+    private String jdbcPassword = "1234";
 
-    public static String generateCustomerID(Connection conn) throws SQLException {
-        String query = "SELECT userID FROM users ORDER BY userID DESC LIMIT 1";
-        try (PreparedStatement ps = conn.prepareStatement(query)) {
-            ResultSet rs = ps.executeQuery();
-            if (rs.next()) {
-                String lastID = rs.getString("userID");
-                int num = Integer.parseInt(lastID.substring(1)) + 1;
-                return String.format("U%07d", num);
+    private static final String INSERT_CUSTOMER_SQL = "INSERT INTO users (userID, firstName, lastName, address, NIC, phoneNumber, email, username, password, userLevel, licenseNumber) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    private static final String GET_LAST_USERID_SQL = "SELECT userID FROM users ORDER BY userID DESC LIMIT 1";
+
+    protected Connection getConnection() throws SQLException {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            return DriverManager.getConnection(jdbcUrl, jdbcUsername, jdbcPassword);
+        } catch (ClassNotFoundException e) {
+            throw new SQLException("JDBC Driver not found!");
+        }
+    }
+
+    public String generateNextUserID() throws SQLException {
+        try (Connection connection = getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(GET_LAST_USERID_SQL);
+             ResultSet resultSet = preparedStatement.executeQuery()) {
+
+            if (resultSet.next()) {
+                String lastUserID = resultSet.getString("userID");
+                int userIdNumber = Integer.parseInt(lastUserID.substring(1)) + 1;
+                return String.format("U%05d", userIdNumber);
             } else {
-                return "U0000001";
+                return "U00001";
             }
         }
     }
 
-    public static boolean insertCustomer(Customer customer) {
-        String sql = "INSERT INTO users (userID, firstName, lastName, address, NIC, phoneNumber, email, licenseNumber, username, password, userLevel) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    public void insertCustomer(Customer customer) throws SQLException {
+        try (Connection connection = getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_CUSTOMER_SQL)) {
 
-        try (Connection conn = DBConnection.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
+            preparedStatement.setString(1, customer.getUserID());
+            preparedStatement.setString(2, customer.getFirstName());
+            preparedStatement.setString(3, customer.getLastName());
+            preparedStatement.setString(4, customer.getAddress());
+            preparedStatement.setString(5, customer.getNIC());
+            preparedStatement.setString(6, customer.getPhoneNumber());
+            preparedStatement.setString(7, customer.getEmail());
+            preparedStatement.setString(8, customer.getUsername());
+            preparedStatement.setString(9, customer.getPassword());
+            preparedStatement.setInt(10, customer.getUserLevel());
+            preparedStatement.setString(11, "Not needed");
 
-            String userID = generateCustomerID(conn);
-            ps.setString(1, userID);
-            ps.setString(2, customer.getFirstName());
-            ps.setString(3, customer.getLastName());
-            ps.setString(4, customer.getAddress());
-            ps.setString(5, customer.getNic());
-            ps.setString(6, customer.getPhoneNumber());
-            ps.setString(7, customer.getEmail());
-            ps.setString(8, "Not Needed");
-            ps.setString(9, customer.getUsername());
-            ps.setString(10, customer.getPassword());
-            ps.setInt(11, 2);
-
-            return ps.executeUpdate() > 0;
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
+            preparedStatement.executeUpdate();
         }
     }
 }
