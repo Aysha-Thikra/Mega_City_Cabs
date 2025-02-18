@@ -148,7 +148,7 @@
             <h2>Driver Signup</h2>
             <p class="signup-subtext">Create your account to become a driver for Mega City Cabs.</p>
 
-            <form action="driver-signup-servlet" method="post" class="signup-form">
+            <form action="driver-signup" method="post" class="signup-form">
                 <div class="form-group">
                     <i class="fas fa-user"></i>
                     <input type="text" name="first_name" placeholder="First Name" required>

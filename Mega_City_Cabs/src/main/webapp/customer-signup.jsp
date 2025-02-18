@@ -137,8 +137,8 @@
             <a href="contact-us.jsp">Contact Us</a>
         </nav>
         <div class="buttons">
-            <button onclick="location.href='guest-views/login.jsp';" class="login-btn">Login</button>
-            <button onclick="location.href='guest-views/signup.jsp';" class="signup-btn-2">Sign Up</button>
+            <button onclick="location.href='login.jsp';" class="login-btn">Login</button>
+            <button onclick="location.href='signup.jsp';" class="signup-btn-2">Sign Up</button>
         </div>
     </header>
     
@@ -148,22 +148,8 @@
             <h2>Customer Signup</h2>
             <p class="signup-subtext">Create your account to access Mega City Cabs services.</p>
 
-            <%-- Display messages from servlet --%>
-            <%
-                String error = request.getParameter("error");
-                String success = request.getParameter("success");
-                if (error != null) {
-            %>
-                <p style="color: red; font-weight: bold;"><%= error %></p>
-            <%
-                } else if (success != null) {
-            %>
-                <p style="color: green; font-weight: bold;"><%= success %></p>
-            <%
-                }
-            %>
+            <form action="customer-signup" method="post" class="signup-form">
 
-            <form action="<%=request.getContextPath() %>Mega_City_Cabs\src\main\java\Servlet\CustomerSignupServlet/customersignupservlet" method="post" class="signup-form" onsubmit="return validateForm();">
                 <div class="form-group">
                     <i class="fas fa-user"></i>
                     <input type="text" name="first_name" placeholder="First Name" required>
@@ -203,7 +189,7 @@
                 <button type="submit" class="signup-btn">Sign Up</button>
             </form>
 
-            <p class="login-link">Already have an account? <a href="../customer-login.jsp">Login</a></p>
+            <p class="login-link">Already have an account? <a href="customer-login.jsp">Login</a></p>
         </div>
     </div>
     

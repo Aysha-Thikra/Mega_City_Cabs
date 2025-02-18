@@ -8,119 +8,118 @@
     <link rel="stylesheet" href="CSS/signup.css?v=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-	<style>
-	
-		body {
-		    font-family: 'Roboto', Arial, sans-serif;
-		    margin: 0;
-		    padding: 0;
-		    background-color: #ff8400;
-		}
-		
-		.signup-container {
-		    text-align: center;
-		    padding: 100px 20px;
-		    margin: auto;
-		    width: 90%;
-		    max-width: 900px;
-		    margin-bottom: -80px;
-		    margin-top: 20px;
-		}
-		
-		.signup-subtext {
-		    font-size: 16px;
-		    color: #666;
-		    margin-bottom: 20px;
-		}
-		
-		.form-wrapper {
-		    background: white;
-		    padding: 30px;
-		    border-radius: 10px;
-		    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-		}
-		
-		.signup-form {
-		    display: grid;
-		    grid-template-columns: repeat(3, 1fr);
-		    gap: 20px;
-		    margin-bottom: 20px;
-		}
-		
-		.signup-form .form-group {
-		    display: flex;
-		    align-items: center;
-		    background: #a0a0a0;
-		    border-radius: 8px;
-		    padding: 12px;
-		}
-		
-		.signup-form .form-group i {
-		    color: #555;
-		    margin-right: 10px;
-		    font-size: 16px;
-		}
-		
-		.signup-form .form-group input {
-		    border: none;
-		    background: transparent;
-		    outline: none;
-		    flex: 1;
-		    font-size: 16px;
-		    padding: 5px;
-		}
-		
-		.signup-btn {
-		    background: linear-gradient(135deg, #ff8400, #ffd110);
-		    color: white;
-		    border: none;
-		    padding: 12px;
-		    font-size: 18px;
-		    font-weight: bold;
-		    border-radius: 8px;
-		    cursor: pointer;
-		    width: 100%;
-		    transition: background 0.3s ease-in-out;
-		    grid-column: 1 / 4; 
-		}
-		
-		.signup-btn:hover {
-		    background: linear-gradient(135deg, #ffd110, #ff8400);
-		}
-		
-		/* Already Have an Account */
-		.login-link {
-		    margin-top: 15px;
-		    font-size: 16px;
-		    color: #555;
-		}
-		
-		.login-link a {
-		    color: #ff8400;
-		    text-decoration: none;
-		    font-weight: bold;
-		}
-		
-		.login-link a:hover {
-		    text-decoration: underline;
-		}
-		
-		@media (max-width: 800px) {
-		    .signup-form {
-		        grid-template-columns: repeat(2, 1fr);
-		    }
-		}
-		
-		@media (max-width: 600px) {
-		    .signup-container {
-		        width: 100%;
-		    }
-		
-		    .signup-form {
-		        grid-template-columns: 1fr;
-		    }
-		}	
-	</style>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ff8400;
+        }
+
+        .signup-container {
+            text-align: center;
+            padding: 100px 20px;
+            margin: auto;
+            width: 90%;
+            max-width: 900px;
+            margin-bottom: -80px;
+            margin-top: 20px;
+        }
+
+        .signup-subtext {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .form-wrapper {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .signup-form {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .signup-form .form-group {
+            display: flex;
+            align-items: center;
+            background: #a0a0a0;
+            border-radius: 8px;
+            padding: 12px;
+        }
+
+        .signup-form .form-group i {
+            color: #555;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        .signup-form .form-group input {
+            border: none;
+            background: transparent;
+            outline: none;
+            flex: 1;
+            font-size: 16px;
+            padding: 5px;
+        }
+
+        .signup-btn {
+            background: linear-gradient(135deg, #ff8400, #ffd110);
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s ease-in-out;
+            grid-column: 1 / 4; 
+        }
+
+        .signup-btn:hover {
+            background: linear-gradient(135deg, #ffd110, #ff8400);
+        }
+
+        /* Already Have an Account */
+        .login-link {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .login-link a {
+            color: #ff8400;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 800px) {
+            .signup-form {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .signup-container {
+                width: 100%;
+            }
+
+            .signup-form {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Menu Bar -->
@@ -144,10 +143,10 @@
     
     <div class="signup-container">       
         <div class="form-wrapper">
-        <h2>Admin Signup</h2>
-        <p class="signup-subtext">Create your account to manage Mega City Cabs efficiently.</p>
-        
-            <form action="admin-signup-servlet" method="post" class="signup-form">
+            <h2>Admin Signup</h2>
+            <p class="signup-subtext">Create your account to manage Mega City Cabs efficiently.</p>
+
+            <form action="admin-signup" method="post" class="signup-form">
                 <div class="form-group">
                     <i class="fas fa-user"></i>
                     <input type="text" name="first_name" placeholder="First Name" required>
