@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page session="true" %>  <!-- Ensure the session is enabled -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,7 +54,7 @@
             <a href="manage-drivers.jsp">Manage Drivers</a>
         </nav>
         <div class="buttons">
-            <button onclick="location.href='logout.jsp';" class="logout-btn">Logout</button>
+            <button onclick="location.href='admin-logout.jsp';" class="logout-btn">Logout</button>
         </div>
     </header>
 
