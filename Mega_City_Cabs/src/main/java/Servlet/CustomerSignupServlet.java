@@ -34,13 +34,20 @@ public class CustomerSignupServlet extends HttpServlet {
 
             Customer customer = new Customer(userID, firstName, lastName, address, nic, phone, email, username, password);
 
-            customerDAO.insertCustomer(customer);
+            String result = customerDAO.insertCustomer(customer);
 
-            RequestDispatcher dispatcher = request.getRequestDispatcher("customer-login.jsp");
-            dispatcher.forward(request, response);
+            if ("success".equals(result)) {
+                response.sendRedirect("customer-login.jsp");
+            } else {
+                request.setAttribute("errorMessage", result);
+                RequestDispatcher dispatcher = request.getRequestDispatcher("customer-signup.jsp");
+                dispatcher.forward(request, response);
+            }
         } catch (SQLException e) {
             e.printStackTrace();
-            response.sendRedirect("customer-signup.jsp?error=1"); 
+            request.setAttribute("errorMessage", "An error occurred during registration.");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("customer-signup.jsp");
+            dispatcher.forward(request, response);
         }
     }
 }
