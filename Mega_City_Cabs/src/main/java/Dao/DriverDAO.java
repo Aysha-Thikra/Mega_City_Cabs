@@ -14,6 +14,10 @@ public class DriverDAO {
 
     private static final String INSERT_DRIVER_SQL = "INSERT INTO users (userID, firstName, lastName, address, NIC, phoneNumber, email, licenseNumber, username, password, userLevel) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     private static final String GET_LAST_USERID_SQL = "SELECT userID FROM users ORDER BY userID DESC LIMIT 1";
+    private static final String CHECK_USERNAME_SQL = "SELECT COUNT(*) FROM users WHERE username = ?";
+    private static final String CHECK_EMAIL_SQL = "SELECT COUNT(*) FROM users WHERE email = ?";
+    private static final String CHECK_NIC_SQL = "SELECT COUNT(*) FROM users WHERE NIC = ?";
+    private static final String CHECK_LICENSE_SQL = "SELECT COUNT(*) FROM users WHERE licenseNumber = ?";
 
     protected Connection getConnection() throws SQLException {
         try {
@@ -37,6 +41,48 @@ public class DriverDAO {
                 return "U00001";
             }
         }
+    }
+
+    public String checkUniqueFields(Driver driver) throws SQLException {
+        try (Connection connection = getConnection()) {
+
+        	try (PreparedStatement checkUsername = connection.prepareStatement(CHECK_USERNAME_SQL)) {
+                checkUsername.setString(1, driver.getUsername());
+                try (ResultSet rs = checkUsername.executeQuery()) {
+                    if (rs.next() && rs.getInt(1) > 0) {
+                        return "Username already exists!";
+                    }
+                }
+            }
+
+            try (PreparedStatement checkEmail = connection.prepareStatement(CHECK_EMAIL_SQL)) {
+                checkEmail.setString(1, driver.getEmail());
+                try (ResultSet rs = checkEmail.executeQuery()) {
+                    if (rs.next() && rs.getInt(1) > 0) {
+                        return "Email already exists!";
+                    }
+                }
+            }
+
+            try (PreparedStatement checkNIC = connection.prepareStatement(CHECK_NIC_SQL)) {
+                checkNIC.setString(1, driver.getNIC());
+                try (ResultSet rs = checkNIC.executeQuery()) {
+                    if (rs.next() && rs.getInt(1) > 0) {
+                        return "NIC already exists!";
+                    }
+                }
+            }
+
+            try (PreparedStatement checkLicense = connection.prepareStatement(CHECK_LICENSE_SQL)) {
+                checkLicense.setString(1, driver.getLicenseNumber());
+                try (ResultSet rs = checkLicense.executeQuery()) {
+                    if (rs.next() && rs.getInt(1) > 0) {
+                        return "License number already exists!";
+                    }
+                }
+            }
+        }
+        return null;
     }
 
     public void insertDriver(Driver driver) throws SQLException {
