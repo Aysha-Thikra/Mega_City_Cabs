@@ -155,7 +155,7 @@
                 <button type="submit" class="signup-btn">Login</button>
             </form>
 
-            <p class="login-link">Don't have an account? <a href="signup.jsp">Sign Up</a></p>
+            <p class="login-link">Don't have an account? <a href="customer-signup.jsp">Sign Up</a></p>
         </div>
     </div>
     
