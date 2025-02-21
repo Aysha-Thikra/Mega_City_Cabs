@@ -34,10 +34,18 @@ public class AdminSignupServlet extends HttpServlet {
 
             Admin admin = new Admin(userID, firstName, lastName, address, nic, phone, email, username, password);
 
+            String validationMessage = adminDAO.checkUniqueFields(admin);
+            if (validationMessage != null) {
+                request.setAttribute("errorMessage", validationMessage);
+                RequestDispatcher dispatcher = request.getRequestDispatcher("admin-signup.jsp");
+                dispatcher.forward(request, response);
+                return;
+            }
+
             adminDAO.insertAdmin(admin);
 
-            RequestDispatcher dispatcher = request.getRequestDispatcher("admin-login.jsp");
-            dispatcher.forward(request, response);
+            response.sendRedirect("admin-login.jsp");
+
         } catch (SQLException e) {
             e.printStackTrace();
             response.sendRedirect("admin-signup.jsp?error=1");
