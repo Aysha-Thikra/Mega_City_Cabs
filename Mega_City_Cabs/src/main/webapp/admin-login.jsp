@@ -113,7 +113,18 @@
                 grid-template-columns: 1fr;
             }
         }
-
+        
+        /* Add error message styles here */
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        
+        .error-message p {
+        	color: red;
+        	font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -140,8 +151,14 @@
         <div class="form-wrapper">
             <h2>Admin Login</h2>
             <p class="signup-subtext">Login to manage Mega City Cabs efficiently.</p>
+            
+            <c:if test="${not empty errorMessage}">
+                <div class="error-message">
+                    <p>${errorMessage}</p>
+                </div>
+            </c:if>
 
-            <form action="admin-login-servlet" method="post" class="signup-form">
+            <form action="admin-login" method="post" class="signup-form">
                 <div class="form-group">
                     <i class="fas fa-user"></i>
                     <input type="text" name="username" placeholder="Username" required>

@@ -142,6 +142,18 @@
         </div>
     </header>
     
+    <!-- Error Message Popup -->
+    <%
+        String errorMessage = (String) request.getAttribute("errorMessage");
+        if (errorMessage != null) {
+    %>
+        <script>
+            alert("<%= errorMessage.replace("\"", "\\\"") %>");
+        </script>
+    <%
+        }
+    %>
+    
     <!-- Driver Signup Form -->
     <div class="signup-container">
         <div class="form-wrapper">
