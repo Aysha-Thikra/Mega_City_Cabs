@@ -35,10 +35,19 @@ public class DriverSignupServlet extends HttpServlet {
 
             Driver driver = new Driver(userID, firstName, lastName, address, nic, phone, email, username, password, licenseNumber);
 
+            String validationResult = driverDAO.checkUniqueFields(driver);
+            if (validationResult != null) {
+                request.setAttribute("errorMessage", validationResult);
+                RequestDispatcher dispatcher = request.getRequestDispatcher("driver-signup.jsp");
+                dispatcher.forward(request, response);
+                return;
+            }
+
             driverDAO.insertDriver(driver);
 
             RequestDispatcher dispatcher = request.getRequestDispatcher("driver-login.jsp");
             dispatcher.forward(request, response);
+
         } catch (SQLException e) {
             e.printStackTrace();
             response.sendRedirect("driver-signup.jsp?error=1");
