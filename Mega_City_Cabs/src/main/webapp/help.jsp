@@ -30,9 +30,9 @@
     </header>
 
     <!-- Heading Section -->
-    <div class="assist-heading">
+    <div class="assist-heading" style="margin-top: 150px;">
         <div class="assist-image-container">
-            <img src="images/car + hoodi guy.png" alt="Car and Hoodie Guy" class="assist-image">
+            <img src="images/car + hoodi guy.png" alt="Car and Hoodie Guy" class="assist-image" >
         </div>
         <div class="assist-text">
             <h2>How Can We Assist You?</h2>
