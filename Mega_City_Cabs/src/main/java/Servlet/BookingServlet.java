@@ -37,6 +37,7 @@ public class BookingServlet extends HttpServlet {
             String estimated_time = request.getParameter("estimated_time") != null ? request.getParameter("estimated_time").trim() : "";
 
             String card_number = request.getParameter("card_number") != null ? request.getParameter("card_number").trim() : "";
+            String masked_card_number = maskCardNumber(card_number);
 
             double price_per_minute = 0.0;
             double fare = 0.0;
@@ -61,6 +62,7 @@ public class BookingServlet extends HttpServlet {
             System.out.println("Car Name: " + car_name);
             System.out.println("Car ID: " + carID);
             System.out.println("Price per Minute: " + price_per_minute);
+            System.out.println("Masked Card Number: " + masked_card_number);
 
             Booking booking = new Booking();
             booking.setBooking_id(booking_id);
@@ -78,7 +80,7 @@ public class BookingServlet extends HttpServlet {
             booking.setEstimated_time(estimated_time);
             booking.setPrice_per_minute(price_per_minute);
             booking.setFare(fare);
-            booking.setCard_number(card_number);
+            booking.setCard_number(masked_card_number);
 
             boolean isSaved = dao.saveBooking(booking);
 
@@ -94,5 +96,13 @@ public class BookingServlet extends HttpServlet {
             response.setContentType("text/html");
             response.getWriter().println("<script>alert('An error occurred while processing the booking.');window.location='customer-dashboard.jsp';</script>");
         }
+    }
+
+    private String maskCardNumber(String cardNumber) {
+        if (cardNumber == null || cardNumber.length() < 4) {
+            return "**** **** **** ****";
+        }
+        String lastFourDigits = cardNumber.substring(cardNumber.length() - 4);
+        return "**** **** **** " + lastFourDigits;
     }
 }
