@@ -36,7 +36,7 @@ public class BookingServlet extends HttpServlet {
             String car_name = request.getParameter("car_name") != null ? request.getParameter("car_name").trim() : "";
             String estimated_time = request.getParameter("estimated_time") != null ? request.getParameter("estimated_time").trim() : "";
 
-            String card_number = request.getParameter("card_number") != null ? request.getParameter("card_number").trim() : ""; // Added card_number field
+            String card_number = request.getParameter("card_number") != null ? request.getParameter("card_number").trim() : "";
 
             double price_per_minute = 0.0;
             double fare = 0.0;
@@ -78,7 +78,7 @@ public class BookingServlet extends HttpServlet {
             booking.setEstimated_time(estimated_time);
             booking.setPrice_per_minute(price_per_minute);
             booking.setFare(fare);
-            booking.setCard_number(card_number);  // Saving card number to the booking object
+            booking.setCard_number(card_number);
 
             boolean isSaved = dao.saveBooking(booking);
 
