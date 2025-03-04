@@ -250,19 +250,19 @@
                 <div class="form-group">
                     <i class="fas fa-map-marker-alt"></i>
                     <label for="pickup">Pickup Location:</label>
-                    <input type="text" id="pickup_location" name="pickup" required>
+                    <input type="text" id="pickup_location" name="pickup_location" required>
                 </div>
 
                 <div class="form-group">
                     <i class="fas fa-map-marker-alt"></i>
                     <label for="drop">Drop Location:</label>
-                    <input type="text" id="drop_location" name="drop" required>
+                    <input type="text" id="drop_location" name="drop_location" required>
                 </div>
 
                 <div class="form-group">
                     <i class="fas fa-clock"></i>
                     <label for="pickupTime">Pickup Time:</label>
-                    <input type="time" id="pickup_time" name="pickupTime" required>
+                    <input type="time" id="pickup_time" name="pickup_time" required>
                 </div>
 
                 <div class="form-group">
@@ -322,7 +322,7 @@
                 <div class="form-group">
 				    <i class="fas fa-clock"></i>
 				    <label for="time">Estimated Ride Time (Minutes):</label>
-				    <input type="number" id="estimated_time" name="time" required min="1" readonly>
+				    <input type="number" id="estimated_time" name="estimated_time" required min="1" readonly>
 				</div>
 
                 <div class="form-group">
@@ -335,15 +335,30 @@
             <!-- Payment Information -->
             <h2>Enter Payment Details</h2>
             <div class="payment-fields">
-                <div class="field-item">
-                    <p><i class="fas fa-credit-card"></i><strong>Card Number:</strong><input type="text" id="card_number" name="cardNumber" maxlength="19" oninput="formatCardNumber(event)" required></p>
-                    <p><i class="fas fa-calendar-alt"></i><strong>Expiry Date:</strong><input type="text" id="expiry_date" name="expiryDate" maxlength="5" oninput="formatExpiryDate(event)" required></p>
+                <div class="form-group">
+                    <i class="fas fa-credit-card"></i>
+                    <label for="card_number">Card Number:</label>
+                    <input type="text" id="card_number" name="card_number" maxlength="19" oninput="formatCardNumber(event)" required>
                 </div>
-                <div class="field-item">
-                    <p><i class="fas fa-user"></i><strong>Cardholder Name:</strong><input type="text" id="cardholder_name" name="cardholderName" required></p>
-                    <p><i class="fas fa-lock"></i><strong>CVV:</strong><input type="text" id="cvv" name="cvv" maxlength="3" required></p>
+
+                <div class="form-group">
+                    <i class="fas fa-credit-card"></i>
+                    <label for="expiry_date">Expiry Date:</label>
+                    <input type="text" id="expiry_date" name="expiry_date" maxlength="5" oninput="formatExpiryDate(event)" required>
                 </div>
+                <div class="form-group">
+				    <i class="fas fa-user"></i>
+				    <label for="cardholder_name">Cardholder Name:</label>
+				    <input type="text" id="cardholder_name" name="cardholder_name" required>
+				</div>
+				
+				<div class="form-group">
+				    <i class="fas fa-lock"></i>
+				    <label for="cvv">CVV:</label>
+				    <input type="text" id="cvv" name="cvv" maxlength="3" required>
+				</div>
             </div>
+            
 
             <button type="submit" class="next-btn">Confirm Booking</button>
             <button class="cancel-btn" onclick="location.href='customer-dashboard.jsp';">Cancel Ride</button>
