@@ -45,7 +45,7 @@
 
 				<!-- Right Side: Form -->
 				<div class="form-right">
-					<form action="contact-servlet" method="POST">
+					<form action="contact-submit" method="POST">
 						<div class="input-group"style="margin-top: 40px;">
 							<input type="text" name="name" id="name" required> <label
 								for="name">Your Name:</label>
@@ -58,12 +58,12 @@
 							<select name="subject" id="subject" required>
 								<option value="Select option">Select option</option>
 								<option value="General Inquiry">General Inquiry</option>
-								<option value="Complaint">City Rides</option>
-								<option value="Complaint">Outstation Travel</option>
-								<option value="Complaint">Corporate Rides</option>
-								<option value="Complaint">Special Assistance</option>
-								<option value="Booking Assistance">Wedding Car Rentals</option>
-								<option value="Service Feedback">Airport Dropoff</option>
+								<option value="City Rides">City Rides</option>
+								<option value="Outstation Travel">Outstation Travel</option>
+								<option value="Corporate Rides">Corporate Rides</option>
+								<option value="Special Assistance">Special Assistance</option>
+								<option value="Wedding Car Rentals">Wedding Car Rentals</option>
+								<option value="Airport Dropoff">Airport Dropoff</option>
 								<option value="Complaint">Complaint</option>
 								<option value="Other">Other</option>
 							</select> <label for="subject">Subject:</label>
