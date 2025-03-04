@@ -31,7 +31,7 @@
 	</header>
 
 	<!-- Banner Section -->
-	<section class="banner" style="margin-top: 52px;">
+	<section class="banner" style="margin-top: 90px;">
 		<div class="overlay"></div>
 		<img src="images/cab.jpeg" alt="City Cab Banner">
 		<div class="banner-text">
