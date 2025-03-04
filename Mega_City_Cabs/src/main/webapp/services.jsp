@@ -32,7 +32,7 @@
 	<!-- Services Section -->
 	<section class="services">
 		<div class="services">
-			<div class="services-content">
+			<div class="services-content" style="margin-top: 25px;">
 				<div class="services-left">
 					<img src="images/yellow car.png" alt="Yellow Car">
 				</div>
