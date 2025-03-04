@@ -33,7 +33,7 @@
     <section class="about-us">
         <!-- New Div with Left Cab Image and Right Description -->
         <div class="about-container">
-            <div class="about-left">
+            <div class="about-left" style="margin-top: 15px;">
                 <img src="images/cab card.png" alt="Mega City Cabs Fleet" class="cab-image">
             </div>
             <div class="about-right">
