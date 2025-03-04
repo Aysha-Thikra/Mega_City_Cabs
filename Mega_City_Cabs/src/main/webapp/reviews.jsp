@@ -29,10 +29,10 @@
         </div>
     </header>
 
-    <div class="review-container">
-        <div class="review-box">
+    <div class="review-container" style="margin-top: 5px; background-color: #ff8400;">
+    <h2 style="color: #4f200d; font-size: 30px;">Customer Reviews</h2>
+        <div class="review-box" style="background-color: #ffffff;">
             <div class="review-left">
-                <h2>Customer Reviews</h2>
                 <p>We value your feedback! Leave a review about your experience with Mega City Cabs.</p>
                 <button class="feedback-btn" onclick="location.href='customer-login.jsp';">Give Feedback</button>
             </div>
@@ -41,6 +41,7 @@
             </div>
         </div>
 
+        <br>
         <div class="reviews">
             <h3>What Our Customers Say</h3>
             <div class="review-grid">
