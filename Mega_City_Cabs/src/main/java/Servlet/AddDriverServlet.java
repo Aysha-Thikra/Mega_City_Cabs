@@ -38,7 +38,7 @@ public class AddDriverServlet extends HttpServlet {
             String validationResult = driverDAO.checkUniqueFields(driver);
             if (validationResult != null) {
                 request.setAttribute("errorMessage", validationResult);
-                RequestDispatcher dispatcher = request.getRequestDispatcher("driver-signup.jsp");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("manage-drivers.jsp");
                 dispatcher.forward(request, response);
                 return;
             }
