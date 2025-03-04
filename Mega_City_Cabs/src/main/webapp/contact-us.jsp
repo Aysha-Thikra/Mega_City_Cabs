@@ -32,11 +32,9 @@
 	</header>
 
 	<!-- Contact Section -->
-	<div class="contact-container">
-		<h2>Get in Touch with Us</h2>
-
-		<div class="contact-container">
-			<div class="form-container">
+	<div class="contact-container" style="background-color: #ff8400;">
+		<div class="contact-container" style="margin-top: -5px; background-color: #ff8400;">
+			<div class="form-container" style="background-color: #ffffff;">
 				<!-- Left Side: Image & Info -->
 				<div class="form-left">
 					<h3>We are here to help!</h3>
@@ -84,14 +82,15 @@
 		<!-- Contact Information Section -->
 		<div class="contact-info">
 			<!-- Contact Card Section -->
-			<div class="contact-card">
-				<h2>Need Further Assistance?</h2>
-				<p>If you have more questions or need help, reach out to our
+			<div class="contact-card" style="background-color: var(--brown);">
+				<h2 style="color: white;">Need Further Assistance?</h2>
+				<p style="color: white;">If you have more questions or need help, reach out to our
 					customer support team!</p>
 				<img src="images/contact card white.png" alt="Contact Image"
 					class="contact-image">
 			</div>
 			<div class="map-container">
+			<h2>Get in Touch with Us</h2><br>
 				<iframe
 					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31686.519805739803!2d79.8488!3d6.9271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25928945301e1%3A0x9a7b42f3c6160c5a!2sColombo%2C%20Sri%20Lanka!5e0!3m2!1sen!2sus!4v1638824394891!5m2!1sen!2sus"
 					width="100%" height="200" style="border: 0;" allowfullscreen=""
