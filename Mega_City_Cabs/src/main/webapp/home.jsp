@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page session="true" %>
+<%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,63 +66,58 @@
 	<section class="best-cars">
 		<h2>Our Best Cars</h2>
 		<div class="car-cards">
+			<%
+				String url = "jdbc:mysql://localhost:3306/MegaCityCabs_db";
+				String dbUser = "root";
+				String dbPassword = "1234";
+				Connection conn = null;
+				Statement stmt = null;
+				ResultSet rs = null;
+				
+				try {
+					Class.forName("com.mysql.cj.jdbc.Driver");
+					conn = DriverManager.getConnection(url, dbUser, dbPassword);
+					
+					String sql = "SELECT * FROM car LIMIT 3";
+					stmt = conn.createStatement();
+					rs = stmt.executeQuery(sql);
+					
+					while(rs.next()) {
+						String carName = rs.getString("car_name");
+						String description = rs.getString("description");
+						String passengers = rs.getString("passengers");
+						String luggages = rs.getString("luggages");
+			%>
+			
 			<div class="car-card" style="background-color: white;">
-				<img src="images/cars.png" alt="Car 1" style="object-fit: contain;">
+				<img src="images/cars.png" alt="<%= carName %>" style="object-fit: contain;">
 				<div class="car-info">
 					<h3>
-						<i class="fas fa-car"></i> Suzuki WagonR
+						<i class="fas fa-car"></i> <%= carName %>
 					</h3>
-					<p>A hatchback, air conditioned with capacity of 4 passengers
-						ideal for short distance trips with adequate luggage space.</p>
+					<p><%= description %></p>
 					<p>
-						<i class="fas fa-users"></i> 4 passengers
+						<i class="fas fa-users"></i> <%= passengers %> passengers
 					</p>
 					<p>
 						<i class="fas fa-snowflake"></i> Air Conditioned
 					</p>
 					<p>
-						<i class="fas fa-briefcase"></i> 1 bags
+						<i class="fas fa-briefcase"></i> <%= luggages %> bags
 					</p>
 				</div>
 			</div>
-			<div class="car-card">
-				<img src="images/cars.png" alt="Car 2" style="object-fit: contain;">
-				<div class="car-info">
-					<h3>
-						<i class="fas fa-car"></i> Tata Nano
-					</h3>
-					<p>A small hatchback, air conditioned with capacity of 3
-						passengers ideal for short distance trips.</p>
-					<p>
-						<i class="fas fa-users"></i> 3 passengers
-					</p>
-					<p>
-						<i class="fas fa-snowflake"></i> Air Conditioned
-					</p>
-					<p>
-						<i class="fas fa-briefcase"></i> 1 Bags
-					</p>
-				</div>
-			</div>
-			<div class="car-card">
-				<img src="images/cars.png" alt="Car 3" style="object-fit: contain;">
-				<div class="car-info">
-					<h3>
-						<i class="fas fa-car"></i> Suzuki Alto
-					</h3>
-					<p>A small hatchback, air conditioned with capacity of 3
-						passengers ideal for short distance trips.</p>
-					<p>
-						<i class="fas fa-users"></i> 3 passengers
-					</p>
-					<p>
-						<i class="fas fa-snowflake"></i> Air Conditioned
-					</p>
-					<p>
-						<i class="fas fa-briefcase"></i> 2 bags
-					</p>
-				</div>
-			</div>
+			
+			<%
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				} finally {
+					if (rs != null) try { rs.close(); } catch (SQLException e) {}
+					if (stmt != null) try { stmt.close(); } catch (SQLException e) {}
+					if (conn != null) try { conn.close(); } catch (SQLException e) {}
+				}
+			%>
 		</div>
 
 		<div class="see-more-container">
