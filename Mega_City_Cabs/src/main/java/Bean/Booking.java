@@ -17,6 +17,7 @@ public class Booking {
     private double price_per_minute;
     private String card_number;
     private double fare;
+    private String driver_name;
 
     public String getBooking_id() {
         return booking_id;
@@ -129,7 +130,7 @@ public class Booking {
     public void setPrice_per_minute(double price_per_minute) {
         this.price_per_minute = price_per_minute;
     }
-    
+
     public String getCard_number() {
         return card_number;
     }
@@ -144,5 +145,13 @@ public class Booking {
 
     public void setFare(double fare) {
         this.fare = fare;
+    }
+
+    public String getDriver_name() {
+        return driver_name;
+    }
+
+    public void setDriver_name(String driver_name) {
+        this.driver_name = driver_name;
     }
 }
