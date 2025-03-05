@@ -19,7 +19,6 @@ public class BookingServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             HttpSession session = request.getSession();
-
             String userID = (String) session.getAttribute("userId");
 
             if (userID == null || userID.isEmpty()) {
@@ -35,6 +34,7 @@ public class BookingServlet extends HttpServlet {
             String route = request.getParameter("route") != null ? request.getParameter("route").trim() : "";
             String car_name = request.getParameter("car_name") != null ? request.getParameter("car_name").trim() : "";
             String estimated_time = request.getParameter("estimated_time") != null ? request.getParameter("estimated_time").trim() : "";
+            String driverID = request.getParameter("driver"); 
 
             String card_number = request.getParameter("card_number") != null ? request.getParameter("card_number").trim() : "";
             String masked_card_number = maskCardNumber(card_number);
@@ -57,12 +57,15 @@ public class BookingServlet extends HttpServlet {
             String carID = dao.getCarIdByName(car_name);
             price_per_minute = dao.getPricePerMinute(car_name);
 
+            String driverName = dao.getDriverNameById(driverID);
+
             System.out.println("Booking ID: " + booking_id);
             System.out.println("User ID: " + userID);
             System.out.println("Car Name: " + car_name);
             System.out.println("Car ID: " + carID);
             System.out.println("Price per Minute: " + price_per_minute);
             System.out.println("Masked Card Number: " + masked_card_number);
+            System.out.println("Driver: " + driverName);
 
             Booking booking = new Booking();
             booking.setBooking_id(booking_id);
@@ -81,6 +84,7 @@ public class BookingServlet extends HttpServlet {
             booking.setPrice_per_minute(price_per_minute);
             booking.setFare(fare);
             booking.setCard_number(masked_card_number);
+            booking.setDriver_name(driverName);
 
             boolean isSaved = dao.saveBooking(booking);
 
