@@ -265,6 +265,49 @@
                     <label for="pickupTime">Pickup Time:</label>
                     <input type="time" id="pickup_time" name="pickup_time" required>
                 </div>
+                
+                <div class="form-group">
+				    <i class="fas fa-user-tie"></i>
+				    <label for="driver">Available Driver:</label>
+				    <select id="driver" name="driver" required>
+				        <option value="" disabled selected>Select a driver</option>
+				        <%
+				            Connection driverConnection = null;
+				            PreparedStatement driverQuery = null;
+				            ResultSet driverResults = null;
+				
+				            try {
+				                Class.forName("com.mysql.cj.jdbc.Driver"); 
+				                driverConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/MegaCityCabs_db", "root", "1234");
+				
+				                String driverSQL = "SELECT userID, firstName, lastName FROM users WHERE userLevel = 3";
+				                driverQuery = driverConnection.prepareStatement(driverSQL);
+				                driverResults = driverQuery.executeQuery();
+				
+				                while (driverResults.next()) { 
+				                    String availableDriverID = driverResults.getString("userID");
+				                    String availableDriverName = driverResults.getString("firstName") + " " + driverResults.getString("lastName");
+				        %>
+				                    <option value="<%= availableDriverID %>"><%= availableDriverName %></option>
+				        <%
+				                }
+				            } catch (Exception driverException) {
+				                out.println("<script>alert('An error occurred while fetching available drivers. Please try again later.');</script>");
+				                driverException.printStackTrace();
+				            } finally {
+				                try {
+				                    if (driverResults != null) driverResults.close();
+				                    if (driverQuery != null) driverQuery.close();
+				                    if (driverConnection != null) driverConnection.close();
+				                } catch (SQLException driverCloseException) {
+				                    driverCloseException.printStackTrace();
+				                }
+				            }
+				        %>
+				    </select>
+				</div>
+
+                
 
                 <div class="form-group">
                     <i class="fas fa-route"></i>
