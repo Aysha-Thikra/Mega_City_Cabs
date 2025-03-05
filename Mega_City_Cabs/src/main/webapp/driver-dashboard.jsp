@@ -1,5 +1,38 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page session="true" %>
+<%@ page session="true" import="java.sql.*" %>
+<%
+    String dbUrl = "jdbc:mysql://localhost:3306/MegaCityCabs_db";
+    String dbUser = "root";
+    String dbPassword = "1234";
+
+    String userId = null;
+    String username = (String) session.getAttribute("username");
+
+    if (username != null) {
+        try {
+            Connection conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
+            
+            String sql = "SELECT userId FROM users WHERE username = ?";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setString(1, username);
+            
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                userId = rs.getString("userId");
+                session.setAttribute("userId", userId);
+            }
+            
+            rs.close();
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    } else {
+        userId = "Unknown";
+    }
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +81,7 @@
         </div>
         <nav class="nav-links">
             <a href="driver-dashboard.jsp">Dashboard</a>
-            <a href="my-rides.jsp">My Rides</a>
+            <a href="my-rides.jsp?userId=<%= session.getAttribute("userId") %>">My Rides</a>
             <a href="driver-profile.jsp">Profile</a>
         </nav>
         <div class="buttons">
