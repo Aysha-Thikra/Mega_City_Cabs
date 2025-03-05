@@ -21,6 +21,7 @@
         	margin: 100px auto; 
         	padding: 20px; 
         	background: #fff; 
+        	margin-top: 120px;
         	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
         	border-radius: 10px; text-align: center; 
         }
@@ -34,8 +35,7 @@
         
         table { 
         	width: 100%; 
-        	border-collapse: 
-        	collapse; 
+        	border-collapse: collapse; 
         	margin-top: 20px; 
         	background: white; 
         }
@@ -84,12 +84,14 @@
                 <th>Booking ID</th>
                 <th>Customer Name</th>
                 <th>Email</th>
+                <th>Card Number</th>
                 <th>Phone</th>
                 <th>Pickup Location</th>
                 <th>Drop Location</th>
                 <th>Pickup Time</th>
                 <th>Car Name</th>
                 <th>Fare</th>
+                <th>Driver Name</th>
             </tr>
             
             <%  
@@ -104,7 +106,7 @@
                     Class.forName("com.mysql.cj.jdbc.Driver");
                     conn = DriverManager.getConnection(url, dbUser, dbPassword);
                     
-                    String query = "SELECT booking_id, first_name, last_name, email, phone, pickup_location, drop_location, pickup_time, car_name, fare FROM booking";
+                    String query = "SELECT booking_id, first_name, last_name, email, card_number, phone, pickup_location, drop_location, pickup_time, car_name, fare, driver_name FROM booking";
                     pstmt = conn.prepareStatement(query);
                     rs = pstmt.executeQuery();
 
@@ -112,23 +114,27 @@
                         String bookingID = rs.getString("booking_id");
                         String customerName = rs.getString("first_name") + " " + rs.getString("last_name");
                         String email = rs.getString("email");
+                        String cardNumber = rs.getString("card_number");
                         String phone = rs.getString("phone");
                         String pickupLocation = rs.getString("pickup_location");
                         String dropLocation = rs.getString("drop_location");
                         String pickupTime = rs.getString("pickup_time");
                         String carName = rs.getString("car_name");
                         String fare = rs.getString("fare");
+                        String driverName = rs.getString("driver_name");
             %>
                         <tr>
                             <td><%= bookingID %></td>
                             <td><%= customerName %></td>
                             <td><%= email %></td>
+                            <td><%= cardNumber %></td>
                             <td><%= phone %></td>
                             <td><%= pickupLocation %></td>
                             <td><%= dropLocation %></td>
                             <td><%= pickupTime %></td>
                             <td><%= carName %></td>
                             <td>Rs. <%= fare %></td>
+                            <td><%= driverName %></td>
                         </tr>
             <%
                     }
