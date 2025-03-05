@@ -87,7 +87,7 @@
 
         <table>
             <tr>
-                <th>Name</th>
+                <th>Customer Name</th>
                 <th>Phone Number</th>
                 <th>Email</th>
                 <th>Card Number</th>
@@ -97,12 +97,13 @@
                 <th>Route</th>
                 <th>Car Name</th>
                 <th>Fare</th>
+                <th>Driver Name</th>
             </tr>
             
             <%  
                 String userId = (String) session.getAttribute("userId");
                 if (userId == null) {
-                    out.println("<tr><td colspan='10'>You are not logged in.</td></tr>");
+                    out.println("<tr><td colspan='11'>You are not logged in.</td></tr>");
                 } else {
                     String url = "jdbc:mysql://localhost:3306/MegaCityCabs_db";
                     String dbUser = "root";
@@ -115,13 +116,14 @@
                         Class.forName("com.mysql.cj.jdbc.Driver");
                         conn = DriverManager.getConnection(url, dbUser, dbPassword);
                         
-                        String query = "SELECT first_name, last_name, phone, email, card_number, pickup_location, drop_location, pickup_time, route, car_name, fare FROM booking WHERE userID = ? ORDER BY pickup_time DESC";
+                        String query = "SELECT first_name, last_name, phone, email, card_number, pickup_location, drop_location, pickup_time, route, car_name, fare, driver_name "
+                                    + "FROM booking WHERE userID = ? ORDER BY pickup_time DESC";
                         pstmt = conn.prepareStatement(query);
                         pstmt.setString(1, userId);
                         rs = pstmt.executeQuery();
 
                         if (!rs.next()) {
-                            out.println("<tr><td colspan='10' class='no-booking-msg'>No bookings yet.</td></tr>");
+                            out.println("<tr><td colspan='11' class='no-booking-msg'>No bookings yet.</td></tr>");
                         } else {
                             do {
                                 String firstName = rs.getString("first_name");
@@ -135,6 +137,7 @@
                                 String route = rs.getString("route");
                                 String carName = rs.getString("car_name");
                                 String fare = rs.getString("fare");
+                                String driverName = rs.getString("driver_name");
                     %>
                                 <tr>
                                     <td><%= firstName + " " + lastName %></td>
@@ -147,6 +150,7 @@
                                     <td><%= route %></td>
                                     <td><%= carName %></td>
                                     <td>Rs. <%= fare %></td>
+                                    <td><%= driverName %></td>
                                 </tr>
                     <%
                             } while (rs.next());
