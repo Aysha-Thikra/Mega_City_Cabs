@@ -126,6 +126,7 @@
         <nav class="nav-links">
             <a href="customer-dashboard.jsp">Dashboard</a>
             <a href="booking.jsp?userId=<%= userId %>">Book a Ride</a>
+            <a href="booking-history.jsp?userId=<%= userId %>">Booking History</a>
             <a href="feedback.jsp?userId=<%= userId %>">Give Feedbacks</a>
             <a href="profile.jsp">Profile</a>
         </nav>
