@@ -1,89 +1,13 @@
 package Dao;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import Bean.Booking;
+import java.sql.*;
 
 public class BookingDAO {
 
     private static final String DB_URL = "jdbc:mysql://localhost:3306/MegaCityCabs_db";
     private static final String DB_USERNAME = "root";
     private static final String DB_PASSWORD = "1234";
-
-    public boolean saveBooking(Booking booking) {
-        boolean isSaved = false;
-        String query = "INSERT INTO booking (booking_id, first_name, last_name, userID, email, phone, pickup_location, drop_location, pickup_time, route, carID, car_name, estimated_time, price_per_minute, card_number, fare) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
-        String[] userNames = getUserNames(booking.getUserID());
-        if (userNames != null) {
-            booking.setFirst_name(userNames[0]);
-            booking.setLast_name(userNames[1]);
-        }
-
-        String booking_id = generateBookingId();
-        String carID = getCarIdByName(booking.getCar_name());
-        double price_per_minute = getPricePerMinute(booking.getCar_name());
-
-        try (Connection conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
-             PreparedStatement stmt = conn.prepareStatement(query)) {
-
-            stmt.setString(1, booking_id);
-            stmt.setString(2, booking.getFirst_name());
-            stmt.setString(3, booking.getLast_name());
-            stmt.setString(4, booking.getUserID());
-            stmt.setString(5, booking.getEmail());
-            stmt.setString(6, booking.getPhone());
-            stmt.setString(7, booking.getPickup_location());
-            stmt.setString(8, booking.getDrop_location());
-            stmt.setString(9, booking.getPickup_time());
-            stmt.setString(10, booking.getRoute());
-            stmt.setString(11, carID);
-            stmt.setString(12, booking.getCar_name());
-            stmt.setString(13, booking.getEstimated_time());
-            stmt.setDouble(14, price_per_minute);
-            stmt.setString(15, booking.getCard_number());
-            stmt.setDouble(16, booking.getFare());
-
-            System.out.println("Booking Details:");
-            System.out.println("Booking ID: " + booking_id);
-            System.out.println("Car Name: " + booking.getCar_name());
-            System.out.println("Car ID: " + carID);
-            System.out.println("Price per Minute: " + price_per_minute);
-
-            int rowsAffected = stmt.executeUpdate();
-            if (rowsAffected > 0) {
-                isSaved = true;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return isSaved;
-    }
-
-    public double getPricePerMinute(String carName) {
-        double price_per_minute = 0.0;
-        String query = "SELECT price_per_minute FROM car WHERE car_name = ?";
-
-        try (Connection conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
-             PreparedStatement stmt = conn.prepareStatement(query)) {
-
-            stmt.setString(1, carName);
-            ResultSet rs = stmt.executeQuery();
-
-            if (rs.next()) {
-                price_per_minute = rs.getDouble("price_per_minute");  
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return price_per_minute;  
-    }
 
     public String generateBookingId() {
         String generatedBookingId = "";
@@ -107,7 +31,9 @@ public class BookingDAO {
     }
 
     public String[] getUserNames(String userID) {
+        String[] userNames = new String[2];
         String query = "SELECT firstName, lastName FROM users WHERE userID = ?";
+
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
              PreparedStatement stmt = conn.prepareStatement(query)) {
 
@@ -115,34 +41,112 @@ public class BookingDAO {
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                String first_name = rs.getString("firstName");
-                String last_name = rs.getString("lastName");
-                return new String[]{first_name, last_name};
+                userNames[0] = rs.getString("firstName");
+                userNames[1] = rs.getString("lastName");
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null;
+
+        return userNames;
     }
 
     public String getCarIdByName(String carName) {
         String carID = null;
-        String query = "SELECT carID FROM car WHERE car_name = ?"; 
+        String query = "SELECT carID FROM car WHERE car_name = ?";
 
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
              PreparedStatement stmt = conn.prepareStatement(query)) {
 
-            stmt.setString(1, carName); 
+            stmt.setString(1, carName);
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                carID = rs.getString("carID");  
+                carID = rs.getString("carID");
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        return carID;  
+        return carID;
+    }
+
+    public double getPricePerMinute(String carName) {
+        double price = 0.0;
+        String query = "SELECT price_per_minute FROM car WHERE car_name = ?";
+
+        try (Connection conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+
+            stmt.setString(1, carName);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                price = rs.getDouble("price_per_minute");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return price;
+    }
+
+    public String getDriverNameById(String driverID) {
+        String driverName = null;
+        String query = "SELECT firstName, lastName FROM users WHERE userID = ? AND userLevel = 3";
+
+        try (Connection conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+
+            stmt.setString(1, driverID);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                driverName = rs.getString("firstName") + " " + rs.getString("lastName");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return driverName;
+    }
+
+    public boolean saveBooking(Booking booking) {
+        String query = "INSERT INTO booking (booking_id, userID, first_name, last_name, email, phone, " +
+                "pickup_location, drop_location, pickup_time, route, carID, car_name, estimated_time, " +
+                "price_per_minute, fare, card_number, driver_name) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+        try (Connection conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+
+            stmt.setString(1, booking.getBooking_id());
+            stmt.setString(2, booking.getUserID());
+            stmt.setString(3, booking.getFirst_name());
+            stmt.setString(4, booking.getLast_name());
+            stmt.setString(5, booking.getEmail());
+            stmt.setString(6, booking.getPhone());
+            stmt.setString(7, booking.getPickup_location());
+            stmt.setString(8, booking.getDrop_location());
+            stmt.setString(9, booking.getPickup_time());
+            stmt.setString(10, booking.getRoute());
+            stmt.setString(11, booking.getCarID());
+            stmt.setString(12, booking.getCar_name());
+            stmt.setString(13, booking.getEstimated_time());
+            stmt.setDouble(14, booking.getPrice_per_minute());
+            stmt.setDouble(15, booking.getFare());
+            stmt.setString(16, booking.getCard_number());
+            stmt.setString(17, booking.getDriver_name());
+
+            int result = stmt.executeUpdate();
+            return result > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 }
