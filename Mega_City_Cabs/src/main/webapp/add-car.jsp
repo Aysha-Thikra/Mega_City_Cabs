@@ -139,7 +139,10 @@
         <h2>Add New Car</h2>
         <form action="add-car" method="POST">
             <label for="licensePlate">License Plate:</label>
-            <input type="text" id="licensePlate" name="licensePlate" required>
+			<input type="text" id="licensePlate" name="licensePlate" required
+			    pattern="^[A-Z]{2,3}-\d{4}$" 
+			    title="License Plate must be in the format XX-1234 or XXX-1234 (e.g., WP-AB 1234 or ABC-1234).">
+
 
             <label for="carName">Car Name:</label>
             <input type="text" id="carName" name="carName" required>
@@ -148,7 +151,10 @@
             <textarea id="description" name="description"></textarea>
 
             <label for="passengers">Passengers:</label>
-            <input type="text" id="passengers" name="passengers">
+			<input type="text" id="passengers" name="passengers" required 
+			    pattern="^\d+$" 
+			    title="Only numbers are allowed (e.g - 1, 2, 3, 5, etc.).">
+
 
             <label for="type">Car Type:</label>
             <select id="type" name="type" required>
@@ -157,7 +163,10 @@
             </select>
 
             <label for="luggages">Luggages:</label>
-            <input type="text" id="luggages" name="luggages">
+			<input type="text" id="luggages" name="luggages" required 
+			    pattern="^\d+$" 
+			    title="Only numbers are allowed (e.g - 0, 1, 2, 10, etc.).">
+
 
             <label for="pricePerMinute">Price per Minute:</label>
             <input type="number" id="pricePerMinute" name="pricePerMinute" step="0.01" required>
