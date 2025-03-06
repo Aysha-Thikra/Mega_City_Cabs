@@ -188,7 +188,7 @@
 				</div>
                 <div class="form-group">
                     <i class="fas fa-car"></i>
-                    <input type="text" name="license_number" placeholder="License Number" required>
+                    <input type="text" name="license_number" placeholder="License Number" required pattern="^[A-Z]{1}\d{7}$|^\d{12}$" title="License number must be either 1 letter followed by 7 digits (e.g - B1234567) or a 12-digit number (e.g - 202312345678).">
                 </div>
                 <div class="form-group">
                     <i class="fas fa-user-circle"></i>
@@ -203,6 +203,7 @@
                     <input type="password" name="confirm_password" placeholder="Confirm Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Password must be at least 6 characters, contain at least one number, one lowercase and one uppercase letter.">
                 </div>
                 <button type="submit" class="signup-btn">Sign Up</button>
+                <button type="button" onclick="location.href='manage-drivers.jsp';" class="signup-btn"> Cancel </button>
             </form>
         </div>
     </div>
