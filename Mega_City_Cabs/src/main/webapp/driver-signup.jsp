@@ -171,7 +171,7 @@
                 </div>
                 <div class="form-group">
                     <i class="fas fa-phone"></i>
-                    <input type="tel" name="phone" placeholder="Phone Number" required maxlength="12" pattern="\d{3}-\d{7}" oninput="formatPhoneNumber()">
+                    <input type="tel" name="phone" placeholder="Phone Number" required maxlength="12" pattern="\d{3}-\d{7}" title="Phone number must be in the format xxx-xxxxxxx">
                 </div>
                 <div class="form-group">
                     <i class="fas fa-envelope"></i>
@@ -182,9 +182,11 @@
                     <input type="text" name="address" placeholder="Address" required>
                 </div>
                 <div class="form-group">
-                    <i class="fas fa-id-card"></i>
-                    <input type="text" name="nic" placeholder="NIC Number" required>
-                </div>
+				    <i class="fas fa-id-card"></i>
+				    <input type="text" name="nic" placeholder="NIC Number" required
+				        pattern="^\d{9}[Vv]$|^\d{12}$" 
+				        title="NIC should be either 9 digits followed by 'V' or 'v' (123456789V) or 12 digits (200012345678).">
+				</div>
                 <div class="form-group">
                     <i class="fas fa-car"></i>
                     <input type="text" name="license_number" placeholder="License Number" required>
@@ -195,11 +197,11 @@
                 </div>
                 <div class="form-group">
                     <i class="fas fa-lock"></i>
-                    <input type="password" name="password" placeholder="Password" required>
+                    <input type="password" name="password" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Password must be at least 6 characters, contain at least one number, one lowercase and one uppercase letter.">
                 </div>
                 <div class="form-group">
                     <i class="fas fa-lock"></i>
-                    <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+                    <input type="password" name="confirm_password" placeholder="Confirm Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Password must be at least 6 characters, contain at least one number, one lowercase and one uppercase letter.">
                 </div>
                 <button type="submit" class="signup-btn">Sign Up</button>
             </form>
@@ -222,15 +224,6 @@
                 <a href="services.jsp"><i class="fas fa-wrench"></i> Services</a>
             </div>
         </div>
-    </footer>
-    
-    <script>
-        function formatPhoneNumber() {
-            let phoneInput = document.getElementById('phone');
-            let formattedPhone = phoneInput.value.replace(/[^0-9]/g, '').replace(/(\d{3})(\d{7})/, '$1-$2');
-            phoneInput.value = formattedPhone;
-        }
-    </script>
-    
+    </footer> 
 </body>
 </html>
