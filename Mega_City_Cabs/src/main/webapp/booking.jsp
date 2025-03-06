@@ -245,7 +245,7 @@
                 <div class="form-group">
                     <i class="fas fa-phone-alt"></i>
                     <label for="phone">Phone Number:</label>
-                    <input type="text" id="phone" name="phone" value="<%= session.getAttribute("phone") != null ? session.getAttribute("phone") : "" %>" required maxlength="12" pattern="\d{3}-\d{7}" placeholder="000-0000000" oninput="formatPhoneNumber()" />
+                    <input type="text" id="phone" name="phone" value="<%= session.getAttribute("phone") != null ? session.getAttribute("phone") : "" %>" required maxlength="12" pattern="\d{3}-\d{7}" title="Phone number must be in the format xxx-xxxxxxx"/>
                 </div>
 
                 <div class="form-group">
@@ -410,11 +410,6 @@
     </div>
 
     <script>
-        function formatPhoneNumber() {
-            let phoneInput = document.getElementById('phone');
-            let formattedPhone = phoneInput.value.replace(/[^0-9]/g, '').replace(/(\d{3})(\d{7})/, '$1-$2');
-            phoneInput.value = formattedPhone;
-        }
 
         function setRideTime() {
             let routeSelect = document.getElementById('route');
