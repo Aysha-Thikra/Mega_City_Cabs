@@ -61,6 +61,7 @@
             font-size: 18px;
             color: #ff0000;
             font-weight: bold;
+            text-align: center;
         }
     </style>
 </head>
