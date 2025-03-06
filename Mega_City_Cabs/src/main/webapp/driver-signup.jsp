@@ -188,9 +188,11 @@
 				        title="NIC should be either 9 digits followed by 'V' or 'v' (123456789V) or 12 digits (200012345678).">
 				</div>
                 <div class="form-group">
-                    <i class="fas fa-car"></i>
-                    <input type="text" name="license_number" placeholder="License Number" required>
-                </div>
+				    <i class="fas fa-car"></i>
+				    <input type="text" name="license_number" placeholder="License Number" required
+				        pattern="^[A-Z]{1}\d{7}$|^\d{12}$" 
+				        title="License number must be either 1 letter followed by 7 digits (e.g - B1234567) or a 12-digit number (e.g - 202312345678).">
+				</div>
                 <div class="form-group">
                     <i class="fas fa-user-circle"></i>
                     <input type="text" name="username" placeholder="Username" required>
