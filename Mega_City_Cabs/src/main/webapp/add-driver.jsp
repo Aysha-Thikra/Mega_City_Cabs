@@ -156,8 +156,8 @@
     <!-- Driver Signup Form -->
     <div class="signup-container">
         <div class="form-wrapper">
-            <h2>Driver Signup</h2>
-            <p class="signup-subtext">Create your account to become a driver for Mega City Cabs.</p>
+            <h2>Driver Registration</h2>
+            <p class="signup-subtext">Register new driver account to make them the new precious driver for Mega City Cabs.</p>
 
             <form action="add-driver" method="post" class="signup-form">
                 <div class="form-group">
