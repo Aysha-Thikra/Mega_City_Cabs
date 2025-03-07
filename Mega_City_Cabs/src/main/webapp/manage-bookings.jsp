@@ -56,6 +56,22 @@
         tr:nth-child(even) { 
         	background-color: #f9f9f9; 
         }
+
+        .download-btn {
+        	display: inline-block;
+            padding: 8px 16px;
+            background-color: #800000;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .download-btn:hover {
+            background-color: #FF0000;
+        }
     </style>
 </head>
 <body>
@@ -92,6 +108,7 @@
                 <th>Car Name</th>
                 <th>Fare</th>
                 <th>Driver Name</th>
+                <th>Download E-Bill</th>
             </tr>
             
             <%  
@@ -135,6 +152,7 @@
                             <td><%= carName %></td>
                             <td>Rs. <%= fare %></td>
                             <td><%= driverName %></td>
+                            <td style="text-align: center;"><a href="GenerateBill?bookingId=<%= bookingID %>" class="download-btn">Download E-Bill</a></td>
                         </tr>
             <%
                     }
