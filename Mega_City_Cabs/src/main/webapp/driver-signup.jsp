@@ -174,9 +174,11 @@
                     <input type="tel" name="phone" placeholder="Phone Number" required maxlength="12" pattern="\d{3}-\d{7}" title="Phone number must be in the format xxx-xxxxxxx">
                 </div>
                 <div class="form-group">
-                    <i class="fas fa-envelope"></i>
-                    <input type="email" name="email" placeholder="Email Address" required>
-                </div>
+				    <i class="fas fa-envelope"></i>
+				    <input type="email" name="email" placeholder="Email Address" required
+				           pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" 
+				           title="Enter a valid email address (e.g - user@example.com)">
+				</div>
                 <div class="form-group">
                     <i class="fas fa-map-marker-alt"></i>
                     <input type="text" name="address" placeholder="Address" required>
@@ -198,9 +200,10 @@
                     <input type="text" name="username" placeholder="Username" required>
                 </div>
                 <div class="form-group">
-                    <i class="fas fa-lock"></i>
-                    <input type="password" name="password" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Password must be at least 6 characters, contain at least one number, one lowercase and one uppercase letter.">
-                </div>
+				    <i class="fas fa-user"></i>
+				    <input type="text" name="username" id="username" placeholder="Username" required 
+				           pattern="[a-zA-Z0-9]{4,}" title="Username must be at least 4 characters long and contain only letters and numbers">
+				</div>
                 <div class="form-group">
                     <i class="fas fa-lock"></i>
                     <input type="password" name="confirm_password" placeholder="Confirm Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Password must be at least 6 characters, contain at least one number, one lowercase and one uppercase letter.">
