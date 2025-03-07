@@ -90,7 +90,7 @@ public class BookingServlet extends HttpServlet {
 
             if (isSaved) {
                 response.setContentType("text/html");
-                response.getWriter().println("<script>alert('Booking saved successfully!');window.location='customer-dashboard.jsp';</script>");
+                response.getWriter().println("<script>alert('Booking saved successfully!');window.location='booking-history.jsp';</script>");
             } else {
                 response.setContentType("text/html");
                 response.getWriter().println("<script>alert('Failed to save booking.');window.location='customer-dashboard.jsp';</script>");
