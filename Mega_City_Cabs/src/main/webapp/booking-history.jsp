@@ -63,6 +63,20 @@
             font-weight: bold;
             text-align: center;
         }
+        .download-btn {
+		    display: inline-block;
+		    padding: 8px 12px;
+		    background-color: #800000;
+		    color: white;
+		    text-decoration: none;
+		    border-radius: 5px;
+		    font-weight: bold;
+		    text-align: center;
+		}
+		.download-btn:hover {
+		    background-color: #FF0000;
+		}
+		        
     </style>
 </head>
 <body>
@@ -86,85 +100,81 @@
         <div class="dashboard-header">Your Booking History</div>
 
         <table>
-            <tr>
-                <th>Customer Name</th>
-                <th>Phone Number</th>
-                <th>Email</th>
-                <th>Card Number</th>
-                <th>Pickup Location</th>
-                <th>Drop Location</th>
-                <th>Pickup Time</th>
-                <th>Route</th>
-                <th>Car Name</th>
-                <th>Fare</th>
-                <th>Driver Name</th>
-            </tr>
-            
-            <%  
-                String userId = (String) session.getAttribute("userId");
-                if (userId == null) {
-                    out.println("<tr><td colspan='11'>You are not logged in.</td></tr>");
-                } else {
-                    String url = "jdbc:mysql://localhost:3306/MegaCityCabs_db";
-                    String dbUser = "root";
-                    String dbPassword = "1234";
-                    Connection conn = null;
-                    PreparedStatement pstmt = null;
-                    ResultSet rs = null;
+	        <tr>
+	            <th>Customer Name</th>
+	            <th>Phone Number</th>
+	            <th>Email</th>
+	            <th>Card Number</th>
+	            <th>Pickup Location</th>
+	            <th>Drop Location</th>
+	            <th>Pickup Time</th>
+	            <th>Route</th>
+	            <th>Car Name</th>
+	            <th>Fare</th>
+	            <th>Driver Name</th>
+	            <th>Actions</th>
+	        </tr>
+	
+	        <%
+			    String userId = (String) session.getAttribute("userId");
+			
+			    if (userId == null) {
+			        out.println("<tr><td colspan='12' class='no-booking-msg'>You are not logged in.</td></tr>");
+			    } else {
+			        String url = "jdbc:mysql://localhost:3306/MegaCityCabs_db";
+			        String dbUser = "root";
+			        String dbPassword = "1234";
+			        Connection conn = null;
+			        PreparedStatement pstmt = null;
+			        ResultSet rs = null;
+			
+			        try {
+			            Class.forName("com.mysql.cj.jdbc.Driver");
+			            conn = DriverManager.getConnection(url, dbUser, dbPassword);
+			
+			            String query = "SELECT booking_id, first_name, last_name, phone, email, card_number, pickup_location, drop_location, pickup_time, route, car_name, fare, driver_name "
+			                         + "FROM booking WHERE userID = ? ORDER BY pickup_time DESC";
+			
+			            pstmt = conn.prepareStatement(query);
+			            pstmt.setString(1, userId);
+			            rs = pstmt.executeQuery();
+			
+			            if (!rs.next()) {
+			                out.println("<tr><td colspan='12' class='no-booking-msg'>No bookings yet.</td></tr>");
+			            } else {
+			                do {
+			%>
+			                    <tr>
+			                        <td><%= rs.getString("first_name") + " " + rs.getString("last_name") %></td>
+			                        <td><%= rs.getString("phone") %></td>
+			                        <td><%= rs.getString("email") %></td>
+			                        <td><%= rs.getString("card_number") %></td>
+			                        <td><%= rs.getString("pickup_location") %></td>
+			                        <td><%= rs.getString("drop_location") %></td>
+			                        <td><%= rs.getString("pickup_time") %></td>
+			                        <td><%= rs.getString("route") %></td>
+			                        <td><%= rs.getString("car_name") %></td>
+			                        <td>Rs. <%= rs.getString("fare") %></td>
+			                        <td><%= rs.getString("driver_name") %></td>
+			                        <td>
+									    <a href="GenerateBill?bookingId=<%= rs.getString("booking_id") %>" class="download-btn">Download Bill</a>
+									</td>
 
-                    try {
-                        Class.forName("com.mysql.cj.jdbc.Driver");
-                        conn = DriverManager.getConnection(url, dbUser, dbPassword);
-                        
-                        String query = "SELECT first_name, last_name, phone, email, card_number, pickup_location, drop_location, pickup_time, route, car_name, fare, driver_name "
-                                    + "FROM booking WHERE userID = ? ORDER BY pickup_time DESC";
-                        pstmt = conn.prepareStatement(query);
-                        pstmt.setString(1, userId);
-                        rs = pstmt.executeQuery();
+			                    </tr>
+			<%
+			                } while (rs.next());
+			            }
+			        } catch (Exception e) {
+			            e.printStackTrace();
+			        } finally {
+			            if (rs != null) try { rs.close(); } catch (SQLException e) {}
+			            if (pstmt != null) try { pstmt.close(); } catch (SQLException e) {}
+			            if (conn != null) try { conn.close(); } catch (SQLException e) {}
+			        }
+			    }
+			%>
 
-                        if (!rs.next()) {
-                            out.println("<tr><td colspan='11' class='no-booking-msg'>No bookings yet.</td></tr>");
-                        } else {
-                            do {
-                                String firstName = rs.getString("first_name");
-                                String lastName = rs.getString("last_name");
-                                String phone = rs.getString("phone");
-                                String email = rs.getString("email");
-                                String cardNumber = rs.getString("card_number");
-                                String pickupLocation = rs.getString("pickup_location");
-                                String dropLocation = rs.getString("drop_location");
-                                String pickupTime = rs.getString("pickup_time");
-                                String route = rs.getString("route");
-                                String carName = rs.getString("car_name");
-                                String fare = rs.getString("fare");
-                                String driverName = rs.getString("driver_name");
-                    %>
-                                <tr>
-                                    <td><%= firstName + " " + lastName %></td>
-                                    <td><%= phone %></td>
-                                    <td><%= email %></td>
-                                    <td><%= cardNumber %></td>
-                                    <td><%= pickupLocation %></td>
-                                    <td><%= dropLocation %></td>
-                                    <td><%= pickupTime %></td>
-                                    <td><%= route %></td>
-                                    <td><%= carName %></td>
-                                    <td>Rs. <%= fare %></td>
-                                    <td><%= driverName %></td>
-                                </tr>
-                    <%
-                            } while (rs.next());
-                        }
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    } finally {
-                        if (rs != null) try { rs.close(); } catch (SQLException e) {}
-                        if (pstmt != null) try { pstmt.close(); } catch (SQLException e) {}
-                        if (conn != null) try { conn.close(); } catch (SQLException e) {}
-                    }
-                }
-            %>
-        </table>
+	    </table>
 
     </div>
 </body>
