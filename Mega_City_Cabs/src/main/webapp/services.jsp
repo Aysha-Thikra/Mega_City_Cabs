@@ -129,19 +129,19 @@
 			<div class="testimonial">
 				<p>"Mega City Cabs is the best! Always on time and very
 					professional drivers."</p>
-				<h4>- Sarah Johnson</h4>
+				<h4>- Sarah Iman</h4>
 			</div>
 
 			<div class="testimonial">
 				<p>"I love the convenience of booking rides through their website.
 					Highly recommend!"</p>
-				<h4>- Michael Adams</h4>
+				<h4>- Sri Perera</h4>
 			</div>
 
 			<div class="testimonial">
 				<p>"Their airport transfer service is exceptional. No stress,
 					just smooth rides."</p>
-				<h4>- Emily Davis</h4>
+				<h4>- Maya Thiyagarajan</h4>
 			</div>
 		</div>
 	</section>
