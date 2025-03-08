@@ -128,16 +128,15 @@
             <img src="images/MCC.png" alt="Mega City Cabs Logo">
         </div>
         <nav class="nav-links">
-            <a href="home.jsp">Home</a>
-            <a href="about-us.jsp">About Us</a>
-            <a href="help.jsp">Help</a>
-            <a href="services.jsp">Services</a>
-            <a href="reviews.jsp">Reviews</a>
-            <a href="contact-us.jsp">Contact Us</a>
+            <a href="admin-dashboard.jsp">Dashboard</a>
+            <a href="manage-customers.jsp">Manage Customers</a>
+            <a href="manage-bookings.jsp">Manage Bookings</a>
+            <a href="manage-cars.jsp">Manage Cars</a>
+            <a href="manage-drivers.jsp">Manage Drivers</a>
+            <a href="manage-feedbacks.jsp">Manage Feedbacks</a>
         </nav>
         <div class="buttons">
-            <button onclick="location.href='login.jsp';" class="login-btn">Login</button>
-            <button onclick="location.href='signup.jsp';" class="signup-btn-2">Sign Up</button>
+            <button onclick="location.href='admin-logout.jsp';" class="logout-btn">Logout</button>
         </div>
     </header>
     
@@ -190,8 +189,6 @@
                 </div>
                 <button type="submit" class="signup-btn">Sign Up</button>
             </form>
-
-            <p class="login-link">Already have an account? <a href="admin-login.jsp">Login</a></p>
         </div>
     </div>
     
@@ -210,5 +207,22 @@
             </div>
         </div>
     </footer>
+    
+    <script>
+        function showSuccessMessage() {
+            alert("New Admin Account created successfully!");
+        }
+    </script>
+    
+    <%
+        String success = request.getParameter("success");
+        if ("true".equals(success)) {
+    %>
+        <script>
+            showSuccessMessage();
+        </script>
+    <%
+        }
+    %>
 </body>
 </html>
