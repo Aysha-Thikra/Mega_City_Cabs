@@ -6,6 +6,10 @@
     int bookingCount = 0;
     int driverCount = 0;
     int carCount = 0;
+    int adminCount = 0; 
+    int feedbackCount = 0;
+    int inquiryCount = 0;
+    double totalIncome = 0.0;
 
     try {
         Class.forName("com.mysql.cj.jdbc.Driver");
@@ -13,7 +17,10 @@
         
         Statement stmt = con.createStatement();
         
-        ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM users WHERE userlevel = 2");
+        ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM users WHERE userlevel = 1");
+        if (rs.next()) adminCount = rs.getInt(1);
+
+        rs = stmt.executeQuery("SELECT COUNT(*) FROM users WHERE userlevel = 2");
         if (rs.next()) customerCount = rs.getInt(1);
         
         rs = stmt.executeQuery("SELECT COUNT(*) FROM users WHERE userlevel = 3");
@@ -24,12 +31,24 @@
         
         rs = stmt.executeQuery("SELECT COUNT(*) FROM booking");
         if (rs.next()) bookingCount = rs.getInt(1);
+
+        rs = stmt.executeQuery("SELECT COUNT(*) FROM feedback");
+        if (rs.next()) feedbackCount = rs.getInt(1);
+
+        rs = stmt.executeQuery("SELECT COUNT(*) FROM contact");
+        if (rs.next()) inquiryCount = rs.getInt(1);
+
+        rs = stmt.executeQuery("SELECT SUM(fare) FROM booking");
+        if (rs.next()) totalIncome = rs.getDouble(1);
         
         con.close();
     } catch (Exception e) {
         e.printStackTrace();
     }
 %>
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -187,18 +206,25 @@
         </div>
     </header>
     
-    <div class="dashboard-section" style="margin-top: 180px;">
+    <div class="dashboard-section" style="margin-top: 145px;">
         <div class="dashboard-card">
             <div class="dashboard-header" style="margin-bottom: -5px;">Welcome, <%= session.getAttribute("admin_username") %>!</div>
+            <p>Manage customers, bookings, cars, drivers, and customer feedbacks efficiently with Mega City Cabs' administration system. Use the navigation menu to access different management functionalities.</p>
         </div>
     </div>
 
     <div class="count-cards">
-        <div class="card"><i class="fas fa-users icon"></i><h3>Registered Customers</h3><p><%= customerCount %></p></div>
-        <div class="card"><i class="fas fa-calendar-check icon"></i><h3>Total Bookings</h3><p><%= bookingCount %></p></div>
-        <div class="card"><i class="fas fa-user-tie icon"></i><h3>Registered Drivers</h3><p><%= driverCount %></p></div>
-        <div class="card"><i class="fas fa-car icon"></i><h3>Available Cars</h3><p><%= carCount %></p></div>
-    </div>
+	    <div class="card"><i class="fas fa-users icon"></i><h3>Registered Customers</h3><p><%= customerCount %></p></div>
+	    <div class="card"><i class="fas fa-calendar-check icon"></i><h3>Total Bookings</h3><p><%= bookingCount %></p></div>
+	    <div class="card"><i class="fas fa-user-tie icon"></i><h3>Registered Drivers</h3><p><%= driverCount %></p></div>
+	    <div class="card"><i class="fas fa-car icon"></i><h3>Available Cars</h3><p><%= carCount %></p></div>
+	    <div class="card"><i class="fas fa-user-shield icon"></i><h3>Registered Admins</h3><p><%= adminCount %></p></div>
+	    <div class="card"><i class="fas fa-comments icon"></i><h3>Total Feedbacks</h3><p><%= feedbackCount %></p></div>
+	    <div class="card"><i class="fas fa-envelope icon"></i><h3>Total Inquiries</h3><p><%= inquiryCount %></p></div>
+	    <div class="card"><i class="fas fa-dollar-sign icon"></i><h3>Total Income</h3><p>Rs. <%= totalIncome %></p></div>
+	</div>
+
+
 
     <div class="dashboard-section">
         <div class="dashboard-card" style="margin-bottom: 50px;">
@@ -211,6 +237,11 @@
             <p>Grant admin privileges to a new user.</p>
             <button class="edit-profile-btn" onclick="location.href='admin-signup.jsp'">Register Admin</button>
         </div>
+        <div class="dashboard-card" style="margin-bottom: 50px;">
+	        <div class="dashboard-header">Manage Inquiries</div>
+	        <p>View and manage customer inquiries.</p>
+	        <button class="edit-profile-btn" onclick="location.href='manage-inquiries.jsp'">Manage Inquiries</button>
+	    </div>
     </div>
 </body>
 </html>
