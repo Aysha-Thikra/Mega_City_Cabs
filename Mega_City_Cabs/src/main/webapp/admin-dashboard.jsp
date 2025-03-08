@@ -45,116 +45,131 @@
             --yellow: #ffd110;
             --orange: #ff8400;
             --brown: #4f200d;
+            --light-bg: #fff7e6;
+            --dark-bg: #4f200d;
         }
 
-        .dashboard-container {
-            max-width: 1000px;
-            margin: 100px auto;
+        body {
+            background-color: #ff8400;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .count-cards {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            padding: 0 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: linear-gradient(135deg, rgba(79, 32, 13, 0.85), rgba(153, 102, 51, 0.85));
             padding: 30px;
-            background: #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            margin-top: 120px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
             text-align: center;
+            width: 220px;
+            color: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .card .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .dashboard-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 0 20px;
+            margin-top: 50px;
+        }
+
+        .dashboard-card {
+            background: var(--light-bg);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+            color: var(--dark-bg);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+
+        .dashboard-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
         }
 
         .dashboard-header {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: bold;
-            margin-bottom: 20px;
-            color: var(--brown);
-        }
-
-        .dashboard-content {
-            font-size: 18px;
-            color: #333;
-            line-height: 1.6;
+            color: var(--orange);
+            margin-bottom: 10px;
         }
 
         .edit-profile-btn {
             background-color: var(--yellow);
             border: none;
-            padding: 10px 20px;
+            padding: 12px 24px;
             color: var(--brown);
             font-size: 18px;
             cursor: pointer;
-            border-radius: 5px;
-            margin-top: 20px;
+            border-radius: 8px;
+            margin-top: 10px;
+            transition: background 0.3s ease, transform 0.2s ease;
         }
 
         .edit-profile-btn:hover {
             background-color: var(--orange);
             color: white;
+            transform: scale(1.05);
         }
 
-        .count-cards {
-		    display: flex;
-		    justify-content: center;
-		    gap: 25px;
-		    margin-top: 120px;
-		    margin-bottom: -100px;
-		}
-		
-		.card {
-		    background: linear-gradient(135deg, rgba(79, 32, 13, 0.85), rgba(153, 102, 51, 0.85));
-		    padding: 25px;
-		    border-radius: 15px;
-		    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2), 
-		                inset -5px -5px 10px rgba(255, 255, 255, 0.1),
-		                0 8px 16px rgba(0, 0, 0, 0.2);
-		    text-align: center;
-		    width: 220px;
-		    backdrop-filter: blur(12px);
-		    transition: transform 0.3s ease, box-shadow 0.3s ease;
-		    position: relative;
-		    overflow: hidden;
-		    border: 1px solid rgba(255, 255, 255, 0.2);
-		}
-		
-		.card::before {
-		    content: "";
-		    position: absolute;
-		    top: -50%;
-		    left: -50%;
-		    width: 200%;
-		    height: 200%;
-		    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
-		    transform: rotate(25deg);
-		    transition: opacity 0.3s ease;
-		    opacity: 0;
-		}
-		
-		.card:hover::before {
-		    opacity: 1;
-		}
-		
-		.card:hover {
-		    transform: translateY(-8px);
-		    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-		}
-		
-		.card i {
-		    font-size: 50px;
-		    color: #FFD700; /* Gold color for contrast */
-		    margin-bottom: 10px;
-		}
-		
-		.card h3 {
-		    margin: 10px 0;
-		    color: #fff;
-		    font-size: 22px;
-		    font-weight: bold;
-		}
-		
-		.card p {
-		    margin: 5px 0;
-		    font-size: 22px;
-		    font-weight: bold;
-		    color: #fff;
-		}
+        @media (max-width: 768px) {
+            .count-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .dashboard-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .dashboard-card {
+                max-width: 90%;
+            }
+        }
     </style>
 </head>
-<body style="background-color: #ff8400;">
+<body>
     <header class="menu-bar">
         <div class="logo">
             <img src="images/MCC.png" alt="Mega City Cabs Logo">
@@ -172,40 +187,30 @@
         </div>
     </header>
     
-    
-    <div class="count-cards">
-        <div class="card">
-            <i class="fas fa-users"></i>
-            <h3>Registered Customers</h3>
-            <p><%= customerCount %></p>
-        </div>
-        <div class="card">
-            <i class="fas fa-calendar-check"></i>
-            <h3>Total Bookings</h3>
-            <p><%= bookingCount %></p>
-        </div>
-        <div class="card">
-            <i class="fas fa-user-tie"></i>
-            <h3>Registered Drivers</h3>
-            <p><%= driverCount %></p>
-        </div>
-        <div class="card">
-            <i class="fas fa-car"></i>
-            <h3>Available Cars</h3>
-            <p><%= carCount %></p>
+    <div class="dashboard-section" style="margin-top: 180px;">
+        <div class="dashboard-card">
+            <div class="dashboard-header" style="margin-bottom: -5px;">Welcome, <%= session.getAttribute("admin_username") %>!</div>
         </div>
     </div>
 
-    <div class="dashboard-container">
-        <div class="dashboard-header">Welcome, <%= session.getAttribute("admin_username") %>!</div>
-        <div class="dashboard-content">
-            <p>Manage customers, bookings, cars, drivers, and customer feedbacks efficiently with Mega City Cabs' administration system.</p>
-            <p>Use the navigation menu to access different management functionalities.</p>
-            <br>
-            <p>If you'd like to update your profile information, you can do so below.</p>
+    <div class="count-cards">
+        <div class="card"><i class="fas fa-users icon"></i><h3>Registered Customers</h3><p><%= customerCount %></p></div>
+        <div class="card"><i class="fas fa-calendar-check icon"></i><h3>Total Bookings</h3><p><%= bookingCount %></p></div>
+        <div class="card"><i class="fas fa-user-tie icon"></i><h3>Registered Drivers</h3><p><%= driverCount %></p></div>
+        <div class="card"><i class="fas fa-car icon"></i><h3>Available Cars</h3><p><%= carCount %></p></div>
+    </div>
+
+    <div class="dashboard-section">
+        <div class="dashboard-card" style="margin-bottom: 50px;">
+            <div class="dashboard-header">Edit Profile</div>
+            <p>Update your profile information below.</p>
             <button class="edit-profile-btn" onclick="location.href='admin-profile.jsp'">Edit Profile</button>
         </div>
+        <div class="dashboard-card" style="margin-bottom: 50px;">
+            <div class="dashboard-header">Register New Admin</div>
+            <p>Grant admin privileges to a new user.</p>
+            <button class="edit-profile-btn" onclick="location.href='admin-signup.jsp'">Register Admin</button>
+        </div>
     </div>
-
 </body>
 </html>
