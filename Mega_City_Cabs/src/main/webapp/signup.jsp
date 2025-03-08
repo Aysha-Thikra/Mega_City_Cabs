@@ -34,7 +34,6 @@
         <h2>Choose Your Signup Type</h2>
         <p>Select the type of account you want to create.</p>
         <div class="signup-options">
-            <button onclick="location.href='admin-signup.jsp';" class="signup-btn admin">Admin Signup</button>
             <button onclick="location.href='customer-signup.jsp';" class="signup-btn customer">Customer Signup</button>
             <button onclick="location.href='driver-signup.jsp';" class="signup-btn driver">Driver Signup</button>
         </div>
