@@ -167,7 +167,7 @@
 
     <div class="form-container">
         <p>To register new drivers click the add new driver button below and register them &#x1F447; </p>
-        <a href="add-driver.jsp">Add New Driver</a>
+        <a href="add-driver.jsp">Register New Driver</a>
     </div>
 
     <div class="dashboard-container">
