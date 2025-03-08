@@ -188,6 +188,7 @@
                     <input type="password" name="confirm_password" placeholder="Confirm Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Password must be at least 6 characters, contain at least one number, one lowercase and one uppercase letter.">
                 </div>
                 <button type="submit" class="signup-btn">Sign Up</button>
+                <button type="button" onclick="location.href='manage-admins.jsp';" class="signup-btn"> Cancel </button>
             </form>
         </div>
     </div>
