@@ -228,11 +228,6 @@
 
     <div class="dashboard-section">
         <div class="dashboard-card" style="margin-bottom: 50px;">
-            <div class="dashboard-header">Edit Profile</div>
-            <p>Update your profile information below.</p>
-            <button class="edit-profile-btn" onclick="location.href='admin-profile.jsp'">Edit Profile</button>
-        </div>
-        <div class="dashboard-card" style="margin-bottom: 50px;">
             <div class="dashboard-header">Register New Admin</div>
             <p>Grant admin privileges to a new user.</p>
             <button class="edit-profile-btn" onclick="location.href='admin-signup.jsp'">Register Admin</button>
@@ -242,6 +237,11 @@
 	        <p>View and manage customer inquiries.</p>
 	        <button class="edit-profile-btn" onclick="location.href='manage-inquiries.jsp'">Manage Inquiries</button>
 	    </div>
+	    <div class="dashboard-card" style="margin-bottom: 50px;">
+            <div class="dashboard-header">Edit Profile</div>
+            <p>Update your profile information below.</p>
+            <button class="edit-profile-btn" onclick="location.href='admin-profile.jsp'">Edit Profile</button>
+        </div>
     </div>
 </body>
 </html>
