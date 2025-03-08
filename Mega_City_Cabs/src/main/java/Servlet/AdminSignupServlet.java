@@ -44,7 +44,8 @@ public class AdminSignupServlet extends HttpServlet {
 
             adminDAO.insertAdmin(admin);
 
-            response.sendRedirect("admin-login.jsp");
+            // Redirect with a success parameter
+            response.sendRedirect("admin-signup.jsp?success=true");
 
         } catch (SQLException e) {
             e.printStackTrace();
