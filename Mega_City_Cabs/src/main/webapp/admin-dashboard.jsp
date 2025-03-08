@@ -228,10 +228,10 @@
 
     <div class="dashboard-section">
         <div class="dashboard-card" style="margin-bottom: 50px;">
-            <div class="dashboard-header">Register New Admin</div>
-            <p>Grant admin privileges to a new user.</p>
-            <button class="edit-profile-btn" onclick="location.href='admin-signup.jsp'">Register Admin</button>
-        </div>
+        	<div class="dashboard-header">Manage Admin Details</div>
+	        <p>View and update admin account information.</p>
+	        <button class="edit-profile-btn" onclick="location.href='manage-admins.jsp'">Manage Admins</button>
+	    </div>
         <div class="dashboard-card" style="margin-bottom: 50px;">
 	        <div class="dashboard-header">Manage Inquiries</div>
 	        <p>View and manage customer inquiries.</p>
