@@ -34,6 +34,7 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             border-radius: var(--border-radius);
             text-align: center;
+            margin-top: 130px;
         }
 
         .dashboard-header {
