@@ -172,7 +172,7 @@
                 </div>
                 <div class="form-group">
                     <i class="fas fa-lock"></i>
-                    <input type="password" name="password" placeholder="Leave it blank to keep current password">
+                    <input type="password" name="password" placeholder="Leave it blank to keep current password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Password must be at least 6 characters, contain at least one number, one lowercase and one uppercase letter.">
                 </div>
                 <button type="submit" class="update-btn">Update Profile</button>
             </form>
