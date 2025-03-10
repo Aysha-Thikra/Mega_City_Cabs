@@ -157,7 +157,7 @@
 			                        <td>Rs. <%= rs.getString("fare") %></td>
 			                        <td><%= rs.getString("driver_name") %></td>
 			                        <td>
-									    <a href="GenerateBill?bookingId=<%= rs.getString("booking_id") %>" class="download-btn">Download Bill</a>
+									    <a href="GenerateBill?bookingId=<%= rs.getString("booking_id") %>" class="download-btn">Download E-Bill</a>
 									</td>
 
 			                    </tr>
