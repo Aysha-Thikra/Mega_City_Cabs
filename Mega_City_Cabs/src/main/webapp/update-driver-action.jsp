@@ -54,12 +54,12 @@
 
         if (usernameUpdated || passwordUpdated) {
             session.invalidate();
-            response.sendRedirect("driver-login.jsp?message=Changes successfully updated. Please log in again.");
+            response.sendRedirect("manage-drivers.jsp?message=Changes successfully updated. Please log in again.");
         } else {
 %>
         <script>
             alert("Profile updated successfully!");
-            window.location.href = "driver-profile.jsp";
+            window.location.href = "manage-drivers.jsp";
         </script>
 <%
         }
