@@ -30,8 +30,8 @@
 
         .dashboard-container {
             max-width: 1200px;
-            margin: 80px auto;
-            padding: 30px;
+            margin: 100px auto;
+            padding: 20px;
             background-color: white;
             border-radius: var(--border-radius);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
