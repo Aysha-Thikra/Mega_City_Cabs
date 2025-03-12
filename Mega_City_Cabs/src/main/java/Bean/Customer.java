@@ -13,7 +13,6 @@ public class Customer {
     private String licenseNumber = "Not needed";
     private int userLevel = 2;
 
-    // Constructor
     public Customer(String userID, String firstName, String lastName, String address, String NIC, 
                     String phoneNumber, String email, String username, String password) {
         this.userID = userID;
@@ -27,7 +26,6 @@ public class Customer {
         this.password = password;
     }
 
-    // Getters and setters
     public String getUserID() { return userID; }
     public void setUserID(String userID) { this.userID = userID; }
 
