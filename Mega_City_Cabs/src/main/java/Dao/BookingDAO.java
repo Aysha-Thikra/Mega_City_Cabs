@@ -8,7 +8,8 @@ public class BookingDAO {
     private static final String DB_URL = "jdbc:mysql://localhost:3306/MegaCityCabs_db";
     private static final String DB_USERNAME = "root";
     private static final String DB_PASSWORD = "1234";
-
+    
+    
     public String generateBookingId() {
         String generatedBookingId = "";
         String query = "SELECT MAX(CAST(SUBSTRING(booking_id, 2) AS UNSIGNED)) FROM booking";
@@ -118,7 +119,7 @@ public class BookingDAO {
     public boolean saveBooking(Booking booking) {
         String query = "INSERT INTO booking (booking_id, userID, first_name, last_name, email, phone, " +
                 "pickup_location, drop_location, pickup_time, route, carID, car_name, estimated_time, " +
-                "price_per_minute, fare, card_number, driver_name) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "price_per_minute, fare, card_number, driver_name, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
              PreparedStatement stmt = conn.prepareStatement(query)) {
@@ -140,6 +141,7 @@ public class BookingDAO {
             stmt.setDouble(15, booking.getFare());
             stmt.setString(16, booking.getCard_number());
             stmt.setString(17, booking.getDriver_name());
+            stmt.setString(18, "Pending");
 
             int result = stmt.executeUpdate();
             return result > 0;
