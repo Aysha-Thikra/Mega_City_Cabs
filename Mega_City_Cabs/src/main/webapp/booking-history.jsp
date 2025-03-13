@@ -88,6 +88,7 @@
             <a href="customer-dashboard.jsp">Dashboard</a>
             <a href="booking.jsp?userId=<%= session.getAttribute("userId") %>">Book a Ride</a>
             <a href="booking-history.jsp?userId=<%= session.getAttribute("userId") %>">Booking History</a>
+            <a href="booking-activity.jsp?userId=<%= session.getAttribute("userId") %>">Booking Activity</a>
             <a href="feedback.jsp?userId=<%= session.getAttribute("userId") %>">Give Feedbacks</a>
             <a href="profile.jsp">Profile</a>
         </nav>
@@ -133,14 +134,14 @@
 			            conn = DriverManager.getConnection(url, dbUser, dbPassword);
 			
 			            String query = "SELECT booking_id, first_name, last_name, phone, email, card_number, pickup_location, drop_location, pickup_time, route, car_name, fare, driver_name "
-			                         + "FROM booking WHERE userID = ? ORDER BY pickup_time DESC";
+			                         + "FROM booking WHERE userID = ? AND status = 'Ride Confirmed' ORDER BY pickup_time DESC";
 			
 			            pstmt = conn.prepareStatement(query);
 			            pstmt.setString(1, userId);
 			            rs = pstmt.executeQuery();
 			
 			            if (!rs.next()) {
-			                out.println("<tr><td colspan='12' class='no-booking-msg'>No bookings yet.</td></tr>");
+			                out.println("<tr><td colspan='12' class='no-booking-msg'>No bookings found yet.</td></tr>");
 			            } else {
 			                do {
 			%>
@@ -159,7 +160,6 @@
 			                        <td>
 									    <a href="GenerateBill?bookingId=<%= rs.getString("booking_id") %>" class="download-btn">Download E-Bill</a>
 									</td>
-
 			                    </tr>
 			<%
 			                } while (rs.next());
