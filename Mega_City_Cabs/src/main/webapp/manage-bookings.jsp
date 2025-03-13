@@ -24,6 +24,7 @@
         	margin-top: 120px;
         	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
         	border-radius: 10px; text-align: center; 
+        	overflow-x: auto; 
         }
         	
         .dashboard-header { 
@@ -38,12 +39,18 @@
         	border-collapse: collapse; 
         	margin-top: 20px; 
         	background: white; 
+        	table-layout: fixed;
+        	font-size: 14px;
+        	word-wrap: break-word;
         }
         
         th, td { 
         	border: 1px solid #ddd; 
         	padding: 10px; 
         	text-align: left; 
+        	overflow: hidden;
+    		text-overflow: ellipsis;
+    		word-wrap: break-word;
         }
         
         th { 
@@ -59,7 +66,7 @@
 
         .download-btn {
         	display: inline-block;
-            padding: 8px 16px;
+            padding: 8px 5px;
             background-color: #800000;
             color: white;
             border: none;
@@ -67,6 +74,7 @@
             text-decoration: none;
             border-radius: 5px;
             text-align: center;
+            font-size: 14px;
         }
 
         .download-btn:hover {
@@ -108,6 +116,7 @@
                 <th>Car Name</th>
                 <th>Fare</th>
                 <th>Driver Name</th>
+                <th>Status</th>
                 <th>Download E-Bill</th>
             </tr>
             
@@ -123,7 +132,7 @@
                     Class.forName("com.mysql.cj.jdbc.Driver");
                     conn = DriverManager.getConnection(url, dbUser, dbPassword);
                     
-                    String query = "SELECT booking_id, first_name, last_name, email, card_number, phone, pickup_location, drop_location, pickup_time, car_name, fare, driver_name FROM booking";
+                    String query = "SELECT booking_id, first_name, last_name, email, card_number, phone, pickup_location, drop_location, pickup_time, car_name, fare, driver_name, status FROM booking";
                     pstmt = conn.prepareStatement(query);
                     rs = pstmt.executeQuery();
 
@@ -139,6 +148,7 @@
                         String carName = rs.getString("car_name");
                         String fare = rs.getString("fare");
                         String driverName = rs.getString("driver_name");
+                        String status = rs.getString("status");
             %>
                         <tr>
                             <td><%= bookingID %></td>
@@ -152,7 +162,25 @@
                             <td><%= carName %></td>
                             <td>Rs. <%= fare %></td>
                             <td><%= driverName %></td>
-                            <td style="text-align: center;"><a href="GenerateBill?bookingId=<%= bookingID %>" class="download-btn">Download E-Bill</a></td>
+                            <td><%= status %></td>
+                            <td style="text-align: center;">
+							    <% 
+							        if ("Ride Confirmed".equals(status)) { 
+							    %>
+							        <a href="GenerateBill?bookingId=<%= bookingID %>" class="download-btn">Download E-Bill</a>
+							    <% 
+							        } else if ("Pending".equals(status)) { 
+							    %>
+							        <span class="download-btn" style="background: #ff8400;">Pending Ride</span>
+							    <% 
+							        } else { 
+							    %>
+							        <span class="download-btn" style="background: red;">Booking Cancelled</span>
+							    <% 
+							        } 
+							    %>
+							</td>
+
                         </tr>
             <%
                     }
