@@ -90,6 +90,7 @@
             <a href="customer-dashboard.jsp">Dashboard</a>
             <a href="booking.jsp?userId=<%= session.getAttribute("userId") %>">Book a Ride</a>
             <a href="booking-history.jsp?userId=<%= session.getAttribute("userId") %>">Booking History</a>
+            <a href="booking-activity.jsp?userId=<%= session.getAttribute("userId") %>">Booking Activity</a>
             <a href="feedback.jsp?userId=<%= session.getAttribute("userId") %>">Give Feedbacks</a>
             <a href="profile.jsp">Profile</a>
         </nav>
