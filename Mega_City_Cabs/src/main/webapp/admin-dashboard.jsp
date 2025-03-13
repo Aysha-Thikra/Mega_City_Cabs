@@ -38,7 +38,7 @@
         rs = stmt.executeQuery("SELECT COUNT(*) FROM contact");
         if (rs.next()) inquiryCount = rs.getInt(1);
 
-        rs = stmt.executeQuery("SELECT SUM(fare) FROM booking");
+        rs = stmt.executeQuery("SELECT SUM(fare) FROM booking WHERE status = 'Ride Confirmed'");
         if (rs.next()) totalIncome = rs.getDouble(1);
         
         con.close();
@@ -221,7 +221,7 @@
 	    <div class="card"><i class="fas fa-user-shield icon"></i><h3>Registered Admins</h3><p><%= adminCount %></p></div>
 	    <div class="card"><i class="fas fa-comments icon"></i><h3>Total Feedbacks</h3><p><%= feedbackCount %></p></div>
 	    <div class="card"><i class="fas fa-envelope icon"></i><h3>Total Inquiries</h3><p><%= inquiryCount %></p></div>
-	    <div class="card"><i class="fas fa-dollar-sign icon"></i><h3>Total Income</h3><p>Rs. <%= totalIncome %></p></div>
+	    <div class="card"><i class="fas fa-money-bill-wave icon"></i><h3>Total Income</h3><p><%= totalIncome %></p></div>
 	</div>
 
 
