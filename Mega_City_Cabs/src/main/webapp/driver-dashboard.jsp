@@ -81,6 +81,7 @@
         </div>
         <nav class="nav-links">
             <a href="driver-dashboard.jsp">Dashboard</a>
+            <a href="ride-requests.jsp?userId=<%= session.getAttribute("userId") %>">Ride Requests</a>
             <a href="my-rides.jsp?userId=<%= session.getAttribute("userId") %>">My Rides</a>
             <a href="driver-profile.jsp">Profile</a>
         </nav>
