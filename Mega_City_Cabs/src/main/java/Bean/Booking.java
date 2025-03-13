@@ -2,9 +2,9 @@ package Bean;
 
 public class Booking {
     private String booking_id;
+    private String userID;
     private String first_name;
     private String last_name;
-    private String userID;
     private String email;
     private String phone;
     private String pickup_location;
@@ -15,9 +15,10 @@ public class Booking {
     private String car_name;
     private String estimated_time;
     private double price_per_minute;
-    private String card_number;
     private double fare;
+    private String card_number;
     private String driver_name;
+    private String status;
 
     public String getBooking_id() {
         return booking_id;
@@ -25,6 +26,14 @@ public class Booking {
 
     public void setBooking_id(String booking_id) {
         this.booking_id = booking_id;
+    }
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
     }
 
     public String getFirst_name() {
@@ -41,14 +50,6 @@ public class Booking {
 
     public void setLast_name(String last_name) {
         this.last_name = last_name;
-    }
-
-    public String getUserID() {
-        return userID;
-    }
-
-    public void setUserID(String userID) {
-        this.userID = userID;
     }
 
     public String getEmail() {
@@ -131,14 +132,6 @@ public class Booking {
         this.price_per_minute = price_per_minute;
     }
 
-    public String getCard_number() {
-        return card_number;
-    }
-
-    public void setCard_number(String card_number) {
-        this.card_number = card_number;
-    }
-
     public double getFare() {
         return fare;
     }
@@ -147,11 +140,27 @@ public class Booking {
         this.fare = fare;
     }
 
+    public String getCard_number() {
+        return card_number;
+    }
+
+    public void setCard_number(String card_number) {
+        this.card_number = card_number;
+    }
+
     public String getDriver_name() {
         return driver_name;
     }
 
     public void setDriver_name(String driver_name) {
         this.driver_name = driver_name;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
