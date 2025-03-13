@@ -85,12 +85,13 @@ public class BookingServlet extends HttpServlet {
             booking.setFare(fare);
             booking.setCard_number(masked_card_number);
             booking.setDriver_name(driverName);
+            booking.setStatus("Pending"); 
 
             boolean isSaved = dao.saveBooking(booking);
 
             if (isSaved) {
                 response.setContentType("text/html");
-                response.getWriter().println("<script>alert('Booking saved successfully!');window.location='booking-history.jsp';</script>");
+                response.getWriter().println("<script>alert('Booking saved successfully!');window.location='booking-activity.jsp';</script>");
             } else {
                 response.setContentType("text/html");
                 response.getWriter().println("<script>alert('Failed to save booking.');window.location='customer-dashboard.jsp';</script>");
