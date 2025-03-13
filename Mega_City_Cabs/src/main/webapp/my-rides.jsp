@@ -72,6 +72,7 @@
         </div>
         <nav class="nav-links">
             <a href="driver-dashboard.jsp">Dashboard</a>
+            <a href="ride-requests.jsp?userId=<%= session.getAttribute("userId") %>">Ride Requests</a>
             <a href="my-rides.jsp?userId=<%= session.getAttribute("userId") %>">My Rides</a>
             <a href="driver-profile.jsp">Profile</a>
         </nav>
@@ -128,14 +129,14 @@
                     query = "SELECT b.driver_name, b.car_name, b.pickup_location, b.drop_location, b.pickup_time, b.fare, u.firstName AS customerFirstName, u.lastName AS customerLastName "
                             + "FROM booking b "
                             + "JOIN users u ON b.userId = u.userId "
-                            + "WHERE b.driver_name = ? "
+                            + "WHERE b.driver_name = ? AND b.status = 'Ride Confirmed' "
                             + "ORDER BY b.pickup_time DESC";
                     pstmt = conn.prepareStatement(query);
                     pstmt.setString(1, driverName);
                     rs = pstmt.executeQuery();
 
                     if (!rs.next()) {
-                        out.println("<tr><td colspan='7' class='no-booking-msg'>No rides available.</td></tr>");
+                        out.println("<tr><td colspan='7' class='no-booking-msg'>No confirmed rides available.</td></tr>");
                     } else {
                         do {
                             String driverNameFromDB = rs.getString("driver_name");
