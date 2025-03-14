@@ -232,10 +232,15 @@
 	        <p>View and update admin account information.</p>
 	        <button class="edit-profile-btn" onclick="location.href='manage-admins.jsp'">Manage Admins</button>
 	    </div>
-        <div class="dashboard-card" style="margin-bottom: 50px;">
+            <div class="dashboard-card" style="margin-bottom: 50px;">
 	        <div class="dashboard-header">Manage Inquiries</div>
 	        <p>View and manage customer inquiries.</p>
 	        <button class="edit-profile-btn" onclick="location.href='manage-inquiries.jsp'">Manage Inquiries</button>
+	    </div>
+	    <div class="dashboard-card" style="margin-bottom: 50px;">
+		<div class="dashboard-header">Manage Earnings</div>
+		<p>View and analyze total earnings from bookings.</p>
+		<button class="edit-profile-btn" onclick="location.href='manage-earnings.jsp'">Manage Earnings</button>
 	    </div>
 	    <div class="dashboard-card" style="margin-bottom: 50px;">
             <div class="dashboard-header">Edit Profile</div>
