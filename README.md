@@ -79,7 +79,7 @@ The system follows a **3-tier architecture**:
 Ensure you have the following installed on your system:
 - ☕ **Java Development Kit (JDK 8 or later)**
 - 🖥 **Eclipse IDE (or any Java-supported IDE)**
-- 🌐 **Apache Tomcat (9.x or later)**
+- 🌐 **Apache Tomcat (10 0r 10.1)**
 - 🗄 **MySQL Workbench & MySQL Server**
 - 🛠 **Git (for version control)**
 
